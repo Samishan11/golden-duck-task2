@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@300;500&display=swap');
+
+.container{
+        line-height: 23px;
+        font-weight: 600;
+        height: 80px;
+        background-color: #fff;
+        width: 100%;
+        -webkit-box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+        position: relative;
+        z-index: 99999;
+        position: fixed;
+}
+.navbar{
+    height: 100%;
+    padding: 0px 120px 0px 120px;
+    display: flex;
+    /* margin: auto; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .logo-container{
+    float: left;
+} */
+#logo{
+    height: 65px;
+    width: auto;
+}
+
+
+/* ss */
+
+.right ul{
+    
+    list-style-type: none;
+    display: flex;
+}
+
+
+.right a{
+    line-height: 1em;
+    margin: 0 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    float: right;
+    cursor: pointer;
+}
+
+.items li{
+    text-decoration:none;
+    list-style-type:none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.hamburger{
+    display: none;
+    height:25px;   
+    cursor: pointer;; 
+}
+
+.hamburger div{
+    transition: 0.4s ease-in;
+}
+
+.hamItem{
+    width: 22px;
+    height: 3px;
+    margin: 3px;
+    background: black;
+
+}
+.lines1, .lines2, .line3{
+    width: 22px;
+    height: 3px;
+    margin: 3px;
+}
+
+.items{
+    display: flex;
+    position:relative;
+}
+.items li{
+    text-decoration:none;
+    list-style-type:none;
+    cursor: pointer;
+}
+
+.hamItem{
+    background-color: rgba(0,0,0,0.6);;
+}
+
+.line2{
+    width: 20px;
+    margin: auto;
+}
+
+.startProject{
+    font-size: 16px;
+    background-color: #0477bf;
+    border-color: #0477bf;
+
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    cursor: pointer;
+
+    
+
+}
+
+.startProject:hover{
+    background-color: white;
+}
+.startProject:hover .startProjectButton{
+    color: #0477bf;
+
+}
+
+.startProjectButton{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px 30px 10px 30px;
+    transition: all 300ms ease 0ms;
+
+}
+
+
+@media screen and (max-width:900px){
+    .right a{
+    flex-direction: column;
+    }
+ 
+
+    .items{
+        display: flex;
+        flex-direction: column;
+        position:fixed;
+        bottom: -150px;
+        position: absolute;
+        left: 0;
+        padding: 0;
+        background: #fff;
+        width: 100%;
+        transform: translateX(200%);
+        border-top: 3px solid #2ea3f2;
+        -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.1);
+        background:#ffffff;
+        transition: 0.5s ease-in;
+
+    }
+
+
+
+    .right li{
+        margin: auto;
+        width: inherit
+
+    }
+    .right a{
+        border-bottom: 1px solid rgba(0,0,0,.03);
+        color: #666;
+        padding: 15px 5%;
+        display: block;
+        margin: auto;
+        float: left;
+    }
+
+    .item{
+        text-align:left;
+        margin-top:5%;
+    }
+
+    .hamburger{
+        display: block;
+    }
+    .right ul{
+        width: 50%;
+
+    }
+
+    .activeMenu{
+        display: flex;
+        transform: translateX(100%);
+        flex-direction: column;
+    
+    }
+}
+
+@media screen and (max-width:900px){
+    .navbar{
+        padding: 0;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+}
+
+@media screen and (max-width:600px){
+    #logo{
+        height: 45px;
+    }
+}
+
+
+
+
+
+
+.toggleIcon .line1{
+transform:rotate(-45deg) translate(-4.5px,-4px)
+}
+.toggleIcon .line2{opacity:0}
+.toggleIcon .line3{
+  transform:rotate(45deg) translate(-12px,-5px);
+}
