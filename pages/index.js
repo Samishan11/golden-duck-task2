@@ -4,6 +4,10 @@ import Link from "next/link";
 
 import Navbar from "../components/Navbar";
 import Solution from "../components/Solution";
+import Succes from "../components/Succes";
+import Capabilities from "../components/Capabilities";
+import Clients from "../components/Clients";
+import project from "../components/Projects";
 import Style from "../public/static/home.module.css";
 
 export default function Home() {
@@ -55,6 +59,10 @@ export default function Home() {
 
       </div>
       <Solution/>
+      <Succes/>
+      <Capabilities/>
+      <Clients/>
+      <Projects/>
     </>
   );
 }

@@ -1,0 +1,34 @@
+
+.container{
+    margin-top: 5%;
+    height: 500px;
+
+}
+
+.container p{
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container h2{
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    color:#000000de;
+    width: 70%;
+    margin: 0;
+    margin: auto;
+}
+
+.clientLogos{
+    width: 80%;
+    height: 150px;
+    margin: auto;
+    margin-top: 5%;
+
+}
+.logo{
+    height: 100%;
+    width: 20%;
+}

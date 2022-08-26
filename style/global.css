@@ -1,0 +1,15 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    color: #666;
+}
+.swiper{
+    height: 100%;
+}
+
+.logo{
+    width: 25%;
+    height: 100%;
+}
