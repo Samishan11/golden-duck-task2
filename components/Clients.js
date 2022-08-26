@@ -7,9 +7,11 @@ import SwiperCore, {Autoplay} from 'swiper'
 import Image from "next/image";
 
 // importing images
-import image1 from 'assets/images/asset 2.png'
-
-
+import image1 from '../public/assets/images/asset 2.png'
+import image2 from '../public/assets/images/asset 3.png'
+import image3 from '../public/assets/images/asset 4.png'
+import image4 from '../public/assets/images/asset 5.png'
+import image5 from '../public/assets/images/asset 7.png'
 
 import { Pagination } from "swiper";
 // Import Swiper styles
@@ -51,7 +53,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="assets/images/asset 3.png"
+                src={image2}
                 layout="fill"
                 class="logo"
               />
@@ -60,7 +62,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="assets/images/asset 4.png"
+                src={image3}
                 layout="fill"
                 class="logo"
               />
@@ -69,7 +71,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="assets/images/asset 5.png"
+                src={image4}
                 layout="fill"
                 class="logo"
               />
@@ -78,21 +80,13 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="assets/images/asset 6.png"
+                src={image5}
                 layout="fill"
                 class="logo"
               />
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.logo1}>
-              <Image
-                src="assets/images/asset 7.png"
-                layout="fill"
-                class="logo"
-              />
-            </div>
-          </SwiperSlide>
+   
         </Swiper>
       </div>
     </div>
