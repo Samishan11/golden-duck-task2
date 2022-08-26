@@ -7,7 +7,8 @@ import SwiperCore, {Autoplay} from 'swiper'
 import Image from "next/image";
 
 // importing images
-import image1 from '../public/assets/images/asset 2.png'
+import image1 from 'assets/images/asset 2.png'
+
 
 
 import { Pagination } from "swiper";
@@ -50,7 +51,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="/../public/assets/images/asset 3.png"
+                src="assets/images/asset 3.png"
                 layout="fill"
                 class="logo"
               />
@@ -59,7 +60,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="/../public/assets/images/asset 4.png"
+                src="assets/images/asset 4.png"
                 layout="fill"
                 class="logo"
               />
@@ -68,7 +69,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="/../public/assets/images/asset 5.png"
+                src="assets/images/asset 5.png"
                 layout="fill"
                 class="logo"
               />
@@ -77,7 +78,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="/../public/assets/images/asset 6.png"
+                src="assets/images/asset 6.png"
                 layout="fill"
                 class="logo"
               />
@@ -86,7 +87,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="/../public/assets/images/asset 7.png"
+                src="assets/images/asset 7.png"
                 layout="fill"
                 class="logo"
               />
