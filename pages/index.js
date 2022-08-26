@@ -7,7 +7,7 @@ import Solution from "../components/Solution";
 import Succes from "../components/Succes";
 import Capabilities from "../components/Capabilities";
 import Clients from "../components/Clients";
-import project from "../components/Projects";
+import Projects from "../components/Projects";
 import Style from "../public/static/home.module.css";
 
 export default function Home() {
