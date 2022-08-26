@@ -6,6 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {Autoplay} from 'swiper'
 import Image from "next/image";
 
+// importing images
+import image1 from '../public/assets/images/asset 2.png'
+
+
 import { Pagination } from "swiper";
 // Import Swiper styles
 import "swiper/css";
@@ -37,7 +41,7 @@ SwiperCore.use([Autoplay]);
           <SwiperSlide>
             <div className={Style.logo1}>
               <Image
-                src="/../public/assets/images/asset 2.png"
+                src={image1}
                 layout="fill"
                 class="logo"
               />
