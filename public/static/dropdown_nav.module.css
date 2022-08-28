@@ -1,0 +1,36 @@
+
+.contianer{
+    display: none;
+}
+.contianer_show{
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+.main{
+    background-color: #f4f7fc;
+    height: 150px;
+}
+.line{
+    width: 100%;
+    min-height: 2px;
+    background-color: #0477bf;
+}
+.links{
+    display: flex;
+    margin-left: -50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.li{
+    margin-top: 20px;
+    font-size: 14px;
+}
+.main li:hover{
+    background-color: #fff;
+    padding:10px;
+}
