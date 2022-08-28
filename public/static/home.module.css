@@ -8,19 +8,18 @@
     position: relative;
     display: flex;
     margin: 0;
-
-
 }
 
 .container{
     background-color: #f4f7fc;
     height: 100vh;
+
 }
 
 
 .leftContainer{
     
-    width: 60%;
+    width: 40%;
     padding: 10%;
 
 }
@@ -75,10 +74,11 @@
 }
 
 .rightContainer{
-    width: 40%;
+    width: 60%;
 }
 
 .rightContainer img{
-    height: 90%;
-    width: auto;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
 }

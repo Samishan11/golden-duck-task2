@@ -1,17 +1,40 @@
 
 .container{
     height: 100vh;
+    background-color: white;
 }
 .container p{
+    margin-top: 4%;
     font-weight: 600;
     text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    padding-top: 4%;
 }
 
 .container h2{
     font-weight: 700;
     font-size: 38px;
-    text-align: left;
+    text-align: center;
     color:#000000de;
     width: 70%;
     margin: 0;
+    margin: auto;
+}
+
+.projectContainer{
+    max-width: 1750px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+
+}
+
+.project{
+    width: 29%;
+    height: 100%;
+    background-color: red;
 }

@@ -8,7 +8,15 @@ function Projects() {
             <h2>The quality and style we follow</h2>
         </div>
         <div className={Style.projectContainer}>
-            
+            <div className={Style.project}>
+
+            </div>
+            <div className={Style.project}>
+
+            </div>
+            <div className={Style.project}>
+              
+            </div>
         </div>
     </div>
   )
