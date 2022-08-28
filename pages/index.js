@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-
-
 import Navbar from "../components/Navbar";
 import Solution from "../components/Solution";
 import Succes from "../components/Succes";
