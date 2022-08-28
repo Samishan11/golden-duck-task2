@@ -6,6 +6,9 @@ import Succes from "../components/Succes";
 import Capabilities from "../components/Capabilities";
 import Clients from "../components/Clients";
 import Projects from "../components/Projects";
+import Feedback from "../components/Feedback";
+import Blog from "../components/Blog";
+import Footer from "../components/Footer";
 import Style from "../public/static/home.module.css";
 
 export default function Home() {
@@ -61,6 +64,9 @@ export default function Home() {
       <Capabilities/>
       <Clients/>
       <Projects/>
+      <Feedback/>
+      <Blog/>
+      <Footer/>
     </>
   );
 }
