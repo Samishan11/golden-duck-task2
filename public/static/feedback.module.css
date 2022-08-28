@@ -1,14 +1,11 @@
 
 .container{
     height: 100vh;
-    background-color: white;
+    background-color: #f4f7fc;
 }
 .container p{
-    margin-top: 4%;
     font-weight: 600;
-    text-transform: uppercase;
     text-align: center;
-    background-color: white;
     padding-top: 4%;
 }
 
@@ -22,7 +19,7 @@
     margin: auto;
 }
 
-.projectContainer{
+.feedbackContainer{
     max-width: 1750px;
     height: 400px;
     display: flex;
@@ -33,55 +30,61 @@
 
 }
 
-.project{
+.feedback{
 
     width: 29%;
-    height: 100%;
-    background-color: transparent;
+    height: 95%;
+    background-color: white;
+    border-radius: 5px 5px 5px;
 }
 
-.projectImage{
+.feedbackImage{
     position: relative;
-    height: 75%;
-    width: 98.7%;
+    width: 80%;
+    margin: auto;
     max-width: 100%;
     overflow: hidden;
     border-radius: 5px 5px 5px 5px;
     overflow: hidden;
-    border-width: 2px;
-    border-color: #0C71C3;
-    border: 2px solid #0C71C3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Image{
-    height: auto;
-    max-width: 100%;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
 }
 
-.projectImage img{
-    -webkit-transition: all 10s;
-    
-}
-.projectImage img:hover{
-    transform: translateY(-100%);
-    margin-top: 320px;
-}
 
-.project p{
-    font-size: 14px;
+.feedback p{
+    font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 400;
     padding: 0;
-    color: black;
-    line-height: 1.7em;
-    font-weight: 600;
-    text-align: left;
+    margin: 0;
 }
 
-.project a{
+.feedback a{
     color: #0477bf !important;
     border-width: 0px !important;
     border-radius: 0px;
     font-weight: 600 !important;
     padding-right: 2em !important;
     background-color: RGBA(255,255,255,0);
+}
+
+.feedbackImage img{
+    width: 35%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.feedbackImage h2{
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 0;
 }
