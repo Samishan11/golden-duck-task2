@@ -75,7 +75,7 @@ function Navbar() {
               </li>
               <li className={Style.item}>
                 <a href="/contact" onClick={navToggle} smooth={true}>
-                  Contact 
+                  Contact Us
                 </a>
               </li>
             </ul>
