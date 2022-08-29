@@ -45,7 +45,7 @@ const graphicdesign = () => {
                 </div>
                 <Sideicons></Sideicons>
                 <Solve></Solve>
-                {/* <Workflow></Workflow> */}
+                <Workflow></Workflow>
                 <Consultation></Consultation>
                 <Footer></Footer>
             </div>
