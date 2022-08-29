@@ -5,6 +5,7 @@ import { GiAutoRepair } from 'react-icons/gi';
 import { GiWorld } from 'react-icons/gi';
 import { BsFillTriangleFill } from 'react-icons/bs';
 const Sideicons = () => {
+
     return (
         <div className={Style1.sideicons}>
             <div className={Style1.row}>

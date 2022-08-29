@@ -2,7 +2,7 @@
     background-color: #f4f7fc;
     margin: 0;
     width: 100%;
-    margin-top: 100px;
+    margin: 100px 0;
 }
 
 .steptext {
@@ -108,13 +108,13 @@
 }
 
 .arrowimg4 {
-    -webkit-transform: rotate(160deg);
-    -moz-transform: rotate(160deg);
-    -o-transform: rotate(160deg);
-    -ms-transform: rotate(160deg);
-    transform: rotate(160deg);
+    -webkit-transform: rotate(170deg);
+    -moz-transform: rotate(170deg);
+    -o-transform: rotate(170deg);
+    -ms-transform: rotate(170deg);
+    transform: rotate(170deg);
     position: absolute;
-    right: 243px;
+    right: 275px;
     top: 25px;
     width: 200px;
 }
