@@ -1,0 +1,96 @@
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading input{
+    height: 40px;
+    width: 45%;
+}
+
+.formBody{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container h4{
+    font-size: 26px;
+}
+
+.formBody input{
+    width: 100%;
+    margin-top: 2%;
+    padding: 0;
+    padding: 1%;
+
+}
+
+.formBody input{
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    border-color: #FFFFFF;
+    border: 0 solid #333;
+    background-color: #f4f7fc;
+}
+
+.heading input{
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    border-color: #FFFFFF;
+    border: 0 solid #333;
+    background-color: #f4f7fc;
+}
+
+.heading input{
+    padding: 1%;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.formBody input{
+    margin-top: 4%;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.formTextArea{
+    height: 80px;
+    padding: 1%;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    border-color: #FFFFFF;
+    border: 0 solid #333;
+    background-color: #f4f7fc;
+    margin-top: 4%;
+    font-family: 'Montserrat',sans-serif;
+}
+.formEmail{
+    height: 40px;
+    padding: 1%;
+}
+.formContainer{
+    position: relative;
+}
+.formButton{
+    position: absolute;
+    bottom: -20%;
+    right: 2%;
+}
+
+.formButton{
+    background-color: #0477bf;
+    padding: 10px 30px ;
+    border-radius: 5px;
+    border: none;
+    color:#fff;
+    font-size: 1rem;
+    transition: .5s;
+    border: 2px solid #0477bf;
+    cursor: pointer;
+}
+.formButton:hover{
+    background-color: #fff;
+    color: #0477bf;
+}
+

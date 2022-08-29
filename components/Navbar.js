@@ -74,9 +74,9 @@ function Navbar() {
                 </Link>
               </li>
               <li className={Style.item}>
-                <Link to={Style.services} onClick={navToggle} smooth={true}>
-                  Contact Us
-                </Link>
+                <a href="/contact" onClick={navToggle} smooth={true}>
+                  Contact 
+                </a>
               </li>
             </ul>
 

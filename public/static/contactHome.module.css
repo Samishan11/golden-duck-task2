@@ -1,0 +1,140 @@
+
+.container{
+    position: relative;
+    height: 300px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    opacity: 1;
+  
+}
+
+.container::before{
+        content: "";
+        background-image: url('../assets/images/insurance-footer-background.png');
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.75;
+}
+
+.subContainer{
+    margin: auto;
+
+}
+.subContainer h2{
+    text-align: center;
+    color: white;
+    opacity: 1;
+
+    position: relative;
+}
+.subContainer h4{
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.contactDetails{
+    padding-top: 5%;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    margin: auto;
+    padding: 5%;
+    justify-content: space-between;
+}
+
+.contactDetails p{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contactDetails h4{
+    font-weight: 700;
+    font-size: 38px;
+    text-align: left;
+    color: #333;
+}
+
+.leftBody{
+    display: flex;
+    justify-content: space-between;
+}
+.leftBody div{
+    margin-right: 4%;
+}
+
+.leftBody a{
+    text-decoration: none;
+}
+
+.leftBody h5{
+    font-size: 16px;
+    color:black;
+    font-weight: 500;
+
+}
+.leftContainer{
+    width: 50%
+}
+
+.rightContainer{
+    width: 42%;
+}
+.googleMapContainer{
+    overflow: hidden;
+    padding-top: 10%;
+    background-color: white;
+
+}
+.map{
+    background-color: white;
+}
+
+.googleMapImg{
+    width: 100%;
+    height: 350px;
+}
+
+.socialLinks{
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socialLinks a{
+    color: white;
+
+}
+
+.socialLinks div{
+    height: 32px;
+    width: 32px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.facebook{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background-color: #3b5998 !important;
+}
+
+.instagram{
+    background-color: #ea2c59 !important;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.socialLinks a{
+    margin: auto;
+}
+
