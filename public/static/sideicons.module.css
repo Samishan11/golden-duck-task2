@@ -1,0 +1,64 @@
+.sideicons {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #0477bf;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    ;
+}
+
+.row {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.textmain{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    transition: .5s;
+    transform: translateX(30px);
+}
+
+.triangelicon {
+    color: #0477bf;
+    transform: rotate(-90deg);
+    font-size: 8px;
+    position: absolute;
+    left: 5px;
+}
+
+.text {
+    margin-left: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 15px;
+    width: auto;
+    background-color: #0477bf;
+    font-size: 8px;
+    padding: 0 5px;
+}
+.row:hover > .textmain{
+    visibility: visible;
+    margin-left: 0;
+    transform: translateX(0px);
+}
