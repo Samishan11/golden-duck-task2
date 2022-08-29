@@ -5,7 +5,6 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineDone } from "react-icons/md";
 import { GoDeviceMobile } from "react-icons/go";
 import Style from "../public/static/solutionSection.module.css";
-import Link from "next/link";
 const Solve = () => {
   return (
     <div className={Style.container}>
@@ -46,9 +45,9 @@ const Solve = () => {
               </div>
             </div>
           </div>
-          <Link href="https://it.goldenduck.com.np/website-development-in-nepal/">
+          <a href="https://it.goldenduck.com.np/website-development-in-nepal/">
             Get a Quote
-          </Link>
+          </a>
         </div>
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
@@ -73,9 +72,9 @@ const Solve = () => {
               </div>
             </div>
           </div>
-          <Link href="https://it.goldenduck.com.np/graphic-designer-in-nepal/">
+          <a href="https://it.goldenduck.com.np/graphic-designer-in-nepal/">
             Get a Quote{" "}
-          </Link>
+          </a>
         </div>
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
@@ -100,9 +99,9 @@ const Solve = () => {
               </div>
             </div>
           </div>
-          <Link href="https://it.goldenduck.com.np/digital-marketing-company-in-nepal/">
+          <a href="https://it.goldenduck.com.np/digital-marketing-company-in-nepal/">
             Get a Quote{" "}
-          </Link>
+          </a>
         </div>
       </div>
     </div>
