@@ -45,7 +45,7 @@
     color: black;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     float: right;
     cursor: pointer;
 }
@@ -102,26 +102,24 @@
 }
 
 .startProject{
-    font-size: 16px;
     background-color: #0477bf;
-    border-color: #0477bf;
-
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
     border-radius: 5px;
-    color: #ffffff;
-    font-weight: 600;
-    font-family: 'Montserrat';
-    cursor: pointer;
+    border: none;
+    color:#fff;
+    font-size: 1rem;
+    transition: .5s;
+    border: 2px solid #0477bf;
 
-    
+    cursor: pointer;
 
 }
 
 .startProject:hover{
-    background-color: white;
+    background-color: #fff;
+    color: #0477bf;
 }
+
+
 .startProject:hover .startProjectButton{
     color: #0477bf;
 
