@@ -9,8 +9,8 @@ const Dropdown_nav = ({ hoverShow }) => {
                 <ul className={Style.links}>
                     
                     <li className={Style.li}><a href='/services/web-development' style={{ color: "#0477bf" }}>Web Development</a></li>
-                    <li className={Style.li}><a href='/degitalmarketing'>Web Development</a></li>
-                    <li className={Style.li}><a to='/graphicdesign'>Web Development</a></li>
+                    <li className={Style.li}><a href='/services/digital-marketing'>Web Development</a></li>
+                    <li className={Style.li}><a to='/services/graphic-design'>Web Development</a></li>
 
                 </ul>
             </div>
