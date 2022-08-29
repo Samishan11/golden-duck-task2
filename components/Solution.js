@@ -5,6 +5,8 @@ import Link from "next/link";
 import { BiCodeAlt, BiMessage } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineDone } from "react-icons/md";
+
+
 function Solution() {
   return (
     <div className={Style.container}>
@@ -17,7 +19,8 @@ function Solution() {
         </div>
       </div>
       <div className={Style.solutions}>
-        <div className={Style.solution}>
+        <div 
+          className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
               <BiCodeAlt />
