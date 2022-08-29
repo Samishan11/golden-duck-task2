@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from "../public/static/dropdown_nav.module.css"
-// import { Link } from "react-router-dom";
+
 const Dropdown_nav = ({ hoverShow }) => {
     return (
         <div className={hoverShow === true ? Style.contianer_show : Style.contianer}>
@@ -10,6 +10,11 @@ const Dropdown_nav = ({ hoverShow }) => {
                     <li className={ Style.li}><a href='/services/web-development' style={{ color: "#0477bf" }}>Web Development</a></li>
                     <li className={Style.li}><a href='/degitalmarketing'>Web Development</a></li>
                     <li className={Style.li}><a href='/graphicdesign'>Web Development</a></li>
+=======
+                    <li className={Style.li}><a href='/services/web-development' style={{ color: "#0477bf" }}>Web Development</a></li>
+                    <li className={Style.li}><a href='/degitalmarketing'>Web Development</a></li>
+                    <li className={Style.li}><a to='/graphicdesign'>Web Development</a></li>
+
                 </ul>
             </div>
         </div>
