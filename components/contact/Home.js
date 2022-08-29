@@ -5,6 +5,7 @@ import ContactForm from "./ContactForm";
 
 import {FaFacebookF} from 'react-icons/fa'
 import {FaInstagram} from 'react-icons/fa'
+import Sideicons from "../Sideicons";
 function Home() {
   return (
     <div>
@@ -46,6 +47,7 @@ function Home() {
           </div>
         </div>
         <div className={Style.rightContainer}>
+            <Sideicons></Sideicons>
             <ContactForm/>
         </div>
       </div>

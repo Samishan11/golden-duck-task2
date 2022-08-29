@@ -10,6 +10,7 @@ import Feedback from "../components/Feedback";
 import Blog from "../components/Blog";
 import Footer from "../components/Footer";
 import Style from "../public/static/home.module.css";
+import Sideicons from "../components/Sideicons";
 
 export default function Home() {
   return (
@@ -56,6 +57,7 @@ export default function Home() {
               height="1116"
             />
           </div>
+          <Sideicons></Sideicons>
         </div>
 
       </div>

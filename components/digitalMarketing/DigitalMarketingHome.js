@@ -2,6 +2,7 @@ import React from "react";
 import Style from "../../public/static/digitalMarketingHome.module.css";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import Sideicons from "../Sideicons";
 
 function DigitalMarketingHome() {
   return (
@@ -41,6 +42,7 @@ function DigitalMarketingHome() {
             height="827"
           />
         </div>
+        <Sideicons></Sideicons>
       </div>
     </div>
   );
