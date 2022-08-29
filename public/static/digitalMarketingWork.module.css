@@ -1,0 +1,124 @@
+.container{
+    background-color: #f4f7fc;
+    margin: 0;
+    width: 100%;
+}
+
+.heading p{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    color: #666;
+    line-height: 1.7em;
+    text-align: center;
+}
+
+.heading h2{
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    color: #333;
+    padding-bottom: 10px;
+    line-height: 1em;
+    word-wrap: wr;
+    word-wrap: break-word;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+
+}
+
+.solutions{
+    width: 80%;
+    height: 750px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.solution{
+    width: 29.6667%;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    border-width: 30px;
+    border-color: #FFFFFF;
+
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+    float: left;
+    position: relative;
+    z-index: 2;
+    min-height: 1px;
+    background-color: white;
+    margin-top: 4%;
+}
+
+.solution svg{
+    margin: auto;
+font-size: 60px;
+color: #0477bf;
+}
+
+.icon{
+    text-align: center;
+    padding: 8%;
+}
+
+
+.solutionList h4{
+    text-align: center;
+    font-family: 'Montserrat' , sans-serif;
+    color: #333;
+    font-weight: 600;
+    line-height: 1em;
+}
+.solutionList{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.solutionList li{
+    color: #666;
+    line-height: 1.7em;
+    font-weight: 500;
+    font-family: Montserrat;
+    list-style: none;
+    font-size: 14px;
+}
+
+.solution a{
+    color: #0477bf !important;
+    border-width: 0px !important;
+    border-radius: 0px;
+    font-weight: 600 !important;
+    padding-right: 2em !important;
+    padding-left: 0.7em !important;
+    background-color: RGBA(255,255,255,0);
+    border-color: #0477bf !important;
+    font-size: 16px;
+    font-family: Montserrat;
+    text-decoration: none;
+
+    position: absolute;
+    bottom: 6%;
+    left: 4%;
+}
+
+.solutionList ul{
+    padding: 0;
+
+}
+
+.solutionList svg{
+    margin: auto;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 100%;
+    background-color: #2ab52acc;
+
+}
