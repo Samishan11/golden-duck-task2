@@ -57,9 +57,9 @@ function Navbar() {
           <div className={Style.right}>
             <ul className={active}>
               <li className={Style.item}>
-                <Link to={Style.about} onClick={navToggle} smooth={true}>
+                <a href="/" onClick={navToggle} smooth={true}>
                   Home
-                </Link>
+                </a>
               </li>
               <li onMouseOver={hoverShow} onMouseOut={hideDropdown} className={Style.item}>
                 <Link to={Style.contact} onClick={navToggle} smooth={true}>
@@ -69,9 +69,9 @@ function Navbar() {
                 <Dropdown_nav hoverShow={onhover}></Dropdown_nav>
               </li>
               <li className={Style.item}>
-                <Link to={Style.services} onClick={navToggle} smooth={true}>
+                <a href="/Portfolio"onClick={navToggle} smooth={true}>
                   Portfolio
-                </Link>
+                </a>
               </li>
               <li className={Style.item}>
                 <a href="/contact" onClick={navToggle} smooth={true}>
