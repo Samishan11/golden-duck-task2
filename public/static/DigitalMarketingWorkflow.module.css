@@ -1,0 +1,84 @@
+.container {
+    background-color: #f4f7fc;
+    margin: 0;
+    width: 100%;
+    margin: 100px 0;
+}
+
+.steptext {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0477bf;
+}
+
+.steps {
+    /* width: 90%; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.step {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    height: 150px;
+    padding: 5px 0;
+    width: 15%;
+    padding-bottom: 15px;
+    margin-top: 20px;
+}
+
+.Flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.arrow {
+    font-size: 100px;
+}
+
+.workflow {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 100px;
+}
+
+.step1 {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 80%;
+    text-align: center;
+}
+
+.container h2{
+    color: #333;
+    font-size: 32px;
+}
+
+.step h3{
+    color: #333;
+}
+

@@ -2,9 +2,14 @@ import React from 'react'
 import Style from '../../public/static/digitalMarketingWork.module.css'
 
 import Link from "next/link";
-import { BiCodeAlt, BiMessage } from "react-icons/bi";
+
+import { BiCodeAlt, BiMessage ,BiSearchAlt2 ,BiLike , BiEditAlt} from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
+import {FaFacebookF} from 'react-icons/fa'
+import{FiMail} from 'react-icons/fi'
+import {ImLink} from 'react-icons/im'
 import { MdOutlineDone } from "react-icons/md";
+
 function Work() {
   return (
   <>
@@ -21,16 +26,17 @@ function Work() {
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
-              <BiCodeAlt />
+              <BiSearchAlt2/>
             </div>
             <div className={Style.solutionDetailsContent}>
               <div className={Style.solutionList}>
-              <h4>Web Development</h4>
+              <h4>SEO</h4>
 
                 <ul>
-                  <li><MdOutlineDone/> Responsive Website</li>
-                  <li><MdOutlineDone/> Ecommerce Website</li>
-                  <li><MdOutlineDone/> Web application</li>
+                  <li><MdOutlineDone/> Keyword Ranking</li>
+                  <li><MdOutlineDone/> On-Page SEO</li>
+                  <li><MdOutlineDone/> Internal Linking</li>
+                  <li><MdOutlineDone/> Google analytics and search</li>
                 </ul>
               </div>
             </div>
@@ -40,16 +46,17 @@ function Work() {
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
-              <AiOutlineHeart />
+              <BiLike  />
             </div>
             <div className={Style.solutionDetailsContent}>
               <div className={Style.solutionList}>
-              <h4>Graphic Design</h4>
+              <h4>Social Media Management</h4>
 
                 <ul>
-                  <li><MdOutlineDone/> Logo and Branding Design</li>
-                  <li><MdOutlineDone/> Social Media Design</li>
-                  <li><MdOutlineDone/> Infographics/Print Design</li>
+                  <li><MdOutlineDone/> Page Creation</li>
+                  <li><MdOutlineDone/> Social Media Post Design</li>
+                  <li><MdOutlineDone/> Daily/Weekley Content Upload</li>
+                  <li><MdOutlineDone/> Page Optimization</li>
                 </ul>
               </div>
             </div>
@@ -60,16 +67,17 @@ function Work() {
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
-              <BiMessage />
+              <FaFacebookF/>
             </div>
             <div className={Style.solutionDetailsContent}>
               <div className={Style.solutionList}>
-              <h4>Digital Marketing</h4>
+              <h4>Social Media Boost</h4>
 
                 <ul>
-                  <li><MdOutlineDone/>   Search Engine Optimization</li>
-                  <li><MdOutlineDone/>   Social Media Marketing</li>
-                  <li><MdOutlineDone/>   Email Marketing</li>
+                  <li><MdOutlineDone/>   Ads Campaign</li>
+                  <li><MdOutlineDone/>   Custom AD Design</li>
+                  <li><MdOutlineDone/>   Detailed Audience Creation</li>
+                  <li><MdOutlineDone/>   Dynamic Ads Creation</li>
                 </ul>
               </div>
             </div>
@@ -79,16 +87,17 @@ function Work() {
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
-              <BiCodeAlt />
+              <FiMail />
             </div>
             <div className={Style.solutionDetailsContent}>
               <div className={Style.solutionList}>
-              <h4>Web Development</h4>
+              <h4>Email Marketing</h4>
 
                 <ul>
-                  <li><MdOutlineDone/> Responsive Website</li>
-                  <li><MdOutlineDone/> Ecommerce Website</li>
-                  <li><MdOutlineDone/> Web application</li>
+                  <li><MdOutlineDone/> Custom Email Design</li>
+                  <li><MdOutlineDone/> Schedule & Send Email Blast</li>
+                  <li><MdOutlineDone/> CAN-SPAM Act Compliant</li>
+                  <li><MdOutlineDone/>Designed to Meet Your Business Needs</li>
                 </ul>
               </div>
             </div>
@@ -98,16 +107,17 @@ function Work() {
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
-              <BiCodeAlt />
+              <BiEditAlt/>
             </div>
             <div className={Style.solutionDetailsContent}>
               <div className={Style.solutionList}>
-              <h4>Web Development</h4>
+              <h4>Content Creation and Marketing</h4>
 
                 <ul>
-                  <li><MdOutlineDone/> Responsive Website</li>
-                  <li><MdOutlineDone/> Ecommerce Website</li>
-                  <li><MdOutlineDone/> Web application</li>
+                  <li><MdOutlineDone/> Blog Writing</li>
+                  <li><MdOutlineDone/> Video Creation</li>
+                  <li><MdOutlineDone/> Social Media Visuals Content </li>
+                  <li><MdOutlineDone/> TikTok Creation </li>
                 </ul>
               </div>
             </div>
@@ -117,16 +127,17 @@ function Work() {
         <div className={Style.solution}>
           <div className={Style.solutionDetails}>
             <div className={Style.icon}>
-              <BiCodeAlt />
+              <ImLink/>
             </div>
             <div className={Style.solutionDetailsContent}>
               <div className={Style.solutionList}>
-              <h4>Web Development</h4>
+              <h4>Link Building</h4>
 
                 <ul>
-                  <li><MdOutlineDone/> Responsive Website</li>
-                  <li><MdOutlineDone/> Ecommerce Website</li>
-                  <li><MdOutlineDone/> Web application</li>
+                  <li><MdOutlineDone/> Blog/Guest Blog Writing</li>
+                  <li><MdOutlineDone/> Directory Submission </li>
+                  <li><MdOutlineDone/> Classified Ads Posting  </li>
+                  <li><MdOutlineDone/> High-Quality Press Release Writing</li>
                 </ul>
               </div>
             </div>
