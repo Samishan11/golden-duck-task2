@@ -20,18 +20,20 @@
 
 .row {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .textmain{
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
     margin: 0;
     position: relative;
-    /* margin-left: 30px; */
+    transition: .5s;
+    transform: translateX(30px);
 }
 
 .triangelicon {
@@ -54,4 +56,9 @@
     background-color: #0477bf;
     font-size: 8px;
     padding: 0 5px;
+}
+.row:hover > .textmain{
+    visibility: visible;
+    margin-left: 0;
+    transform: translateX(0px);
 }

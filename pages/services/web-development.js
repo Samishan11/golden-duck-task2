@@ -5,6 +5,8 @@ import Style from "../../public/static/home.module.css"
 import Sideicons from "../../components/Sideicons";
 import Solve from "../../webdevelopmentComponent/Solve";
 import Workflow from "../../webdevelopmentComponent/Workflow";
+import Consultation from "../../components/Consultation";
+import Footer from "../../components/Footer";
 
 
 export default function first() {
@@ -52,6 +54,8 @@ export default function first() {
       </div>
       <Solve></Solve>
       <Workflow></Workflow>
+      <Consultation></Consultation>
+      <Footer></Footer>
     </>
   );
 }
