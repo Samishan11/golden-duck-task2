@@ -25,17 +25,16 @@ const graphicdesign = () => {
                             ></path>
                         </h1>
                         <p>
-                        Make a brand that is easy to remember and different from the crowd.
+                            Make a brand that is easy to remember and different from the crowd.
                         </p>
-                        <animate
+                        <a
                             className={Style.getQuoteButton}
-                            href="https://it.goldenduck.com.np/get-a-quote/"
-                        >
+                            href="https://it.goldenduck.com.np/get-a-quote/">
                             Get a Quote
-                        </animate>
+                        </a>
                     </div>
                     <div className={Style.rightContainer}>
-                        <img style={{marginTop:"100px" , width:"30rem"}}
+                        <img style={{ marginTop: "100px", width: "30rem" }}
                             loading="lazy"
                             src="/assets/images/asset 27.svg"
                             alt=""
