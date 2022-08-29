@@ -39,13 +39,12 @@ export default function first() {
           <div className={Style.rightContainer}>
             <img
               loading="lazy"
-              src="https://it.goldenduck.com.np/wp-content/uploads/2022/04/web-development-3454628-2918517.png"
+              src="/assets/images/web-development.png"
               alt=""
               title="677-6775409_lead-generation-png"
-              srcset="https://it.goldenduck.com.np/wp-content/uploads/2022/04/677-6775409_lead-generation-png.png 1020w, https://it.goldenduck.com.np/wp-content/uploads/2022/04/677-6775409_lead-generation-png-980x1072.png 980w, https://it.goldenduck.com.np/wp-content/uploads/2022/04/677-6775409_lead-generation-png-480x525.png 480w"
+              srcset="https://it.goldenduck.com.np/wp-content/uploads/2022/04/web-development-3454628-2918517.png"
               sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1020px, 100vw"
-              width="1020"
-              height="1116"
+              width={800}
             />
           </div>
         </div>

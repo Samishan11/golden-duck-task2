@@ -1,6 +1,5 @@
 import React from 'react'
 import Style from "../public/static/dropdown_nav.module.css"
-import { Link } from "react-router-dom";
 
 const Dropdown_nav = ({ hoverShow }) => {
     return (
@@ -8,6 +7,10 @@ const Dropdown_nav = ({ hoverShow }) => {
             <div className={Style.main}>
                 <div className={Style.line}></div>
                 <ul className={Style.links}>
+                    <li className={ Style.li}><a href='/services/web-development' style={{ color: "#0477bf" }}>Web Development</a></li>
+                    <li className={Style.li}><a href='/degitalmarketing'>Web Development</a></li>
+                    <li className={Style.li}><a href='/graphicdesign'>Web Development</a></li>
+=======
                     <li className={Style.li}><a href='/services/web-development' style={{ color: "#0477bf" }}>Web Development</a></li>
                     <li className={Style.li}><a href='/degitalmarketing'>Web Development</a></li>
                     <li className={Style.li}><a to='/graphicdesign'>Web Development</a></li>
