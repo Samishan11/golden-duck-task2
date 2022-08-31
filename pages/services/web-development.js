@@ -40,6 +40,7 @@ export default function first() {
           </div>
           <div className={Style.rightContainer}>
             <img
+            style={{marginTop:"10rem"}}
               loading="lazy"
               src="/assets/images/web-development.png"
               alt=""

@@ -3,6 +3,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 999;
 }
 
 .icon {
