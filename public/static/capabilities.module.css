@@ -91,6 +91,12 @@
     display: block;
 }
 
+.row span{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0.5%;
+}
+
 .rowColor1{
     position: absolute;
     top: 0;
@@ -109,6 +115,8 @@
     margin-bottom: 10px;
     overflow: hidden;
     display: block;
+    display: flex;
+    justify-content: end;
 }
 
 .rowColor2{
@@ -129,6 +137,9 @@
     margin-bottom: 10px;
     overflow: hidden;
     display: block;
+
+    display: flex;
+    justify-content: end;
 }
 
 .rowColor3{
@@ -149,6 +160,9 @@
     margin-bottom: 10px;
     overflow: hidden;
     display: block;
+
+    display: flex;
+    justify-content: end;
 }
 
 .rowColor4{
@@ -169,6 +183,9 @@
     margin-bottom: 10px;
     overflow: hidden;
     display: block;
+
+    display: flex;
+    justify-content: end;
 }
 
 .analytics li{

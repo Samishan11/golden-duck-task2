@@ -9,7 +9,7 @@ const WorkFlow = () => {
       <div style={{ textAlign: "center" }}>
         <p style={{ fontWeight: "bold" }}>Our Style</p>
         <div>
-          <h2 style={{ color: "#000" }}>Our Digital Marketing Offerings </h2>
+          <h2 style={{ color: "#000" }}>Our Digital Marketing Offerings</h2>
         </div>
       </div>
       <div className={Style.steps}>
