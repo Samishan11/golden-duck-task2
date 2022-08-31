@@ -56,7 +56,10 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 100px;
 }
-
+.text h1{
+    padding: 0;
+    margin: 0;
+}
 .step1 {
     height: 200px;
     width: 200px;
@@ -114,7 +117,25 @@
     -ms-transform: rotate(170deg);
     transform: rotate(170deg);
     position: absolute;
-    right: 245px;
+    right: 265px;
     top: 25px;
     width: 200px;
+}
+
+@media only screen and (max-width:1450px){
+    .work img{
+        display: none;
+    }
+}
+@media only screen and (max-width:1080px){
+    .work img{
+        display: none;
+    }
+}
+@media only screen and (max-width:850px){
+    .workflow {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2rem;
+    }
 }

@@ -39,6 +39,7 @@
 .ul {
     display: flex;
     padding:10px 100px;
+    flex-wrap: wrap;
     
 }
 .ul li:first-child{
@@ -52,7 +53,8 @@
     text-decoration: none;
     list-style: none;
     border: 1px solid #e5e4e4;
-    padding: 5px 15px;
+    width: auto;
+    padding: .2rem 1rem;
     border-radius: 1px;
     cursor: pointer;
 }
@@ -95,6 +97,9 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+.branch a{
+    text-decoration: none;
 }
 
 .companyname {
