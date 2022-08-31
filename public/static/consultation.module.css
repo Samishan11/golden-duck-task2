@@ -17,7 +17,12 @@
     font-size: .8rem;
     padding: 10px 0;
 }
-.btn button{
+
+.btn{
+    margin-top: 2%;
+}
+
+.btn a{
     background-color: #0477bf;
     padding: 10px 30px ;
     margin-top:  40px;
@@ -29,8 +34,9 @@
     border: 2px solid #0477bf;
     font-family: 'Montserrat';
     cursor: pointer;
+    text-decoration: none;
 }
-.btn button:hover{
+.btn :hover{
     background-color: #fff;
     color: #0477bf;
 }

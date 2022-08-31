@@ -41,7 +41,7 @@ export default function Home() {
             </p>
             <Link
               className={Style.getQuoteButton}
-              href="https://it.goldenduck.com.np/get-a-quote/"
+              href="/contact"
             >
               Get a Quote
             </Link>
