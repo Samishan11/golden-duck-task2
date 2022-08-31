@@ -31,11 +31,13 @@
     font-size: 38px;
     text-align: left;
     color:#000000de;
-    width: 70%;
+    width: 80%;
     margin: 0;
 
 }
-
+.listContainer ul{
+    padding: 0;
+}
 .leftContainer li{
     list-style-type: none;
     margin: 0;
@@ -48,6 +50,9 @@
     color: #000 !important;
 }
 
+.leftContainer svg{
+    color: #007bb6;
+}
 .rightContainer{
     padding: 4%;
 }
@@ -73,7 +78,7 @@
 .row{
     height: 20px;
     width: 80%;
-    background-color: #0477bf !important;
+    background-color: #f4f7fc !important;
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -83,6 +88,86 @@
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
+    display: block;
+}
+
+.rowColor1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    width: 95%;
+    background-color: #1a6d9d !important;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
+}
+
+.rowColor2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    width: 90%;
+    background-color: #1a6d9d !important;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
+}
+
+.rowColor3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    width: 85%;
+    background-color: #1a6d9d !important;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
+}
+
+.rowColor4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    width: 90%;
+    background-color: #1a6d9d !important;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 10px;
+    overflow: hidden;
     display: block;
 }
 

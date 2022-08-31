@@ -1,5 +1,9 @@
 import React from "react";
 import Style from "../public/static/capabilities.module.css";
+import {AiOutlineTeam,AiFillMessage,AiFillLock} from 'react-icons/ai'
+import {BsSuitHeartFill} from 'react-icons/bs'
+import {MdAccessTimeFilled} from 'react-icons/md'
+import {FaBrain} from 'react-icons/fa' 
 
 function Capabilities() {
   return (
@@ -10,12 +14,12 @@ function Capabilities() {
 
         <div className={Style.listContainer}>
           <ul>
-            <li>Accountability and Trust</li>
-            <li>Communication</li>
-            <li>Confident Team</li>
-            <li>Customer Statisfaction</li>
-            <li>Work Productivity</li>
-            <li>Every Detail Matters</li>
+            <li><AiFillLock/> Accountability and Trust</li>
+            <li><AiFillMessage/> Communication</li>
+            <li><AiOutlineTeam/> Confident Team</li>
+            <li><BsSuitHeartFill/> Customer Statisfaction</li>
+            <li><MdAccessTimeFilled/> Work Productivity</li>
+            <li><FaBrain/> Every Detail Matters</li>
           </ul>
         </div>
       </div>
@@ -26,20 +30,31 @@ function Capabilities() {
           <ul>
             <li>
               <h4>Digital Marketing</h4>
-              <div className={Style.row}></div>
+              <div className={Style.row}>
+              <div className={Style.rowColor1}></div>
+
+              </div>
             </li>
             <li>
               <h4>Website and Mobile Development</h4>
-              <div className={Style.row}></div>
+              <div className={Style.row}>
+              <div className={Style.rowColor2}></div>
+
+              </div>
             </li>
             <li>
               <h4>Graphic Design</h4>
 
-              <div className={Style.row}></div>
+              <div className={Style.row}>
+                <div className={Style.rowColor3}></div>
+              </div>
             </li>
             <li>
               <h4>Social Media Management</h4>
-              <div className={Style.row}></div>
+              <div className={Style.row}>
+              <div className={Style.rowColor4}></div>
+
+              </div>
             </li>
           </ul>
         </div>
