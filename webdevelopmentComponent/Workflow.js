@@ -9,7 +9,7 @@ const Workflow = () => {
       <div style={{ textAlign: "center" }}>
         <p style={{ fontWeight: "bold" }}>Our Style</p>
         <div>
-          <h2 style={{ color: "#000" }}>Mainstream Work Flow Process</h2>
+          <h1 style={{ color: "#000" ,paddingBottom:"4rem" }}>Mainstream Work Flow Process</h1>
         </div>
       </div>
       {/* <div className={Style.steps}>

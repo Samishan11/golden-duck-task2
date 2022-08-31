@@ -26,26 +26,31 @@ const Portfolio = () => {
             </div>
             <div className={Style.branchmain}>
                 <div className={Style.branch}>
-                    <div className={Style.main}>
-                        <div className={Style.body}>
-                            <img src="/assets/images/asset 29.png" alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
-                            <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
+                    <a href="/project/Project">
+                        <div className={Style.main}>
+                            <div className={Style.body}>
+                                <img src="/assets/images/asset 29.png" alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
+                                <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
+                            </div>
+                            <div className="content">
+                                <p className={Style.companyname}>JAC Motors</p>
+                                <p className={Style.work}>Website Development</p>
+                            </div>
                         </div>
-                        <div className="content">
-                            <p className={Style.companyname}>JAC Motors</p>
-                            <p className={Style.work}>Website Development</p>
+                    </a>
+                    <a href="/project/Project">
+                        <div className={Style.main}>
+                            <div className={Style.body}>
+                                <img src="/assets/images/asset 30.jpg" alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
+                                <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
+                            </div>
+                            <div className="content">
+                                <p className={Style.companyname}>JAC Motors</p>
+                                <p className={Style.work}>Website Development</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className={Style.main}>
-                        <div className={Style.body}>
-                            <img src="/assets/images/asset 30.jpg" alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
-                            <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
-                        </div>
-                        <div className="content">
-                            <p className={Style.companyname}>JAC Motors</p>
-                            <p className={Style.work}>Website Development</p>
-                        </div>
-                    </div>
+                    </a>
+
                     <div className={Style.main}>
                         <div className={Style.body}>
                             <img src="/assets/images/asset 29.png" alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
