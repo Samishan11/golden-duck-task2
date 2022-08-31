@@ -134,6 +134,16 @@
 
 }
 
+.startProjectButton a{
+    text-decoration: none;
+    color: white;
+}
+
+.startProjectButton:hover a{
+    color: #0477bf;
+}
+
+
 
 @media screen and (max-width:900px){
     .right a{

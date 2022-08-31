@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Style from "./Navbar.module.css";
-import { Link } from "react-scroll";
+import Link from "next/link";
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -57,33 +57,31 @@ function Navbar() {
           <div className={Style.right}>
             <ul className={active}>
               <li className={Style.item}>
-                <a href="/" onClick={navToggle} smooth={true}>
+                <Link href="/" onClick={navToggle} smooth={true}>
                   Home
-                </a>
+                </Link>
               </li>
               <li onMouseOver={hoverShow} onMouseOut={hideDropdown} className={Style.item}>
-                <Link to={Style.contact} onClick={navToggle} smooth={true}>
-                  Services
-                  <RiArrowDropDownLine></RiArrowDropDownLine>
-                </Link>
+                  <a>Services
+                  <RiArrowDropDownLine></RiArrowDropDownLine></a>
                 <Dropdown_nav hoverShow={onhover}></Dropdown_nav>
               </li>
               <li className={Style.item}>
-                <a href="/Portfolio"onClick={navToggle} smooth={true}>
+                <Link href="/Portfolio"onClick={navToggle} smooth={true}>
                   Portfolio
-                </a>
+                </Link>
               </li>
               <li className={Style.item}>
-                <a href="/contact" onClick={navToggle} smooth={true}>
+                <Link href="/contact" onClick={navToggle} smooth={true}>
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
 
           </div>
           <div className={Style.startProject}>
             <li className={Style.startProjectButton}>
-              <Link to="#" onClick={navToggle} smooth={true}>
+              <Link href="#" onClick={navToggle} smooth={true}>
                 Start Project
               </Link>
             </li>
