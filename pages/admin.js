@@ -31,8 +31,8 @@ function admin() {
               config
             );
       
-            localStorage.setItem("authToken", data.accessToken);
-            localStorage.setItem("refressToken",data.refreshToken)
+            Cookies.set("accessToken", data.accessToken);
+            Cookies.set("refressToken",data.refreshToken)
 
             Cookies.set("Loggedin",true)
             console.log(Cookies.get("Loggedin"))

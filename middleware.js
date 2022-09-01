@@ -6,6 +6,9 @@ export default function middleware(req){
     
     if (url.match('/dashboard')) {
         const session = req.cookies.get('Loggedin');
+    
+
+        console.log(check)
         
         if (session === "false") {
             console.log('test')
