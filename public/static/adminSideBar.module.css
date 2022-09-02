@@ -1,11 +1,14 @@
 
-
+.mainContainer{
+    display: flex;
+    width: 100%;
+}
 .container{
     margin: 0;
     padding: 0;
     height: 100vh;
     background-color: rgb(74, 74, 185);
-    width: 30%;
+    width: 20%;
     color: white;
     display: flex;
 
@@ -34,4 +37,8 @@
     padding: 5%;
     font-weight: 600;
     cursor: pointer;
+}
+
+.dashboard{
+    width: 80%;
 }
