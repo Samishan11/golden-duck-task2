@@ -10,6 +10,8 @@ function Sidebar() {
   
 
   return (
+    <>
+
 
     <div className={Style.container}>
       <ul>
@@ -39,13 +41,17 @@ function Sidebar() {
           </a>
         </li>
         <li>
-      <button onClick={logout}>LogOut</button>
+           <button onClick={logout}>LogOut</button>
           
         </li>
       
       </ul>
 
     </div>
+
+
+
+    </>
   );
 }
 
