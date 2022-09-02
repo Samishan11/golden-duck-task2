@@ -3,7 +3,8 @@ import Style from "../../public/static/adminblog.module.css";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
-
+import {useState} from "react"
+import Link from "next/link"
 function blog() {
 
     const [blog,setBlog] = useState(false);
