@@ -1,14 +1,13 @@
 import React from 'react'
-import Style from "../../public/static/adminblog.module.css";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 
-
 function blog() {
   return (
-    <div className='body'>
-      <div className="blogs">
+    <div className='body' style={{padding:"1rem"}}>
+       <Button variant="outline-primary">Add Blog</Button>
+      <div style={{marginTop:"1rem"}} className="blogs">
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -23,10 +22,10 @@ function blog() {
           <tbody>
             <tr>
               <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
+              <td>blog titler</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cumque vel enim, est placeat aut!</td>
+              <td>Admin</td>
+              <td>2022/09/02</td>
               <td> <Button variant="outline-success">Edit</Button>  <Button variant="outline-danger">Delete</Button></td>
             </tr>
           </tbody>
