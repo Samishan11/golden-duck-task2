@@ -1,7 +1,10 @@
 
-.container{
+.mainContainer{
     width: 100%;
     height: 100vh;
+    display: flex;
+}
+.container{
     display: flex;
 }
 

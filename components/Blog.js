@@ -1,6 +1,5 @@
 import React from "react";
 import Style from "../public/static/blog.module.css";
-import { Link } from "react-scroll";
 function Blog() {
   return (
     <div className={Style.container}>
@@ -43,8 +42,8 @@ function Blog() {
               </h2>
               <h5>Digital Marketing</h5>
               <p>
-                I will explain the reasons why your business needs good
-                Digital Marketing in Nepal. The role of a good digital marketing
+                I will explain the reasons why your business needs good Digital
+                Marketing in Nepal. The role of a good digital marketing
                 strategy becomes critical when it comes to scaling up local
                 businesses and...
               </p>
