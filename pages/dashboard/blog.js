@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 import {useState} from "react"
 import Link from "next/link"
+import Addblog from './addblog';
 function blog() {
 
     const [blog,setBlog] = useState(false);
@@ -12,9 +13,9 @@ function blog() {
 
   return (
     <div className='body' style={{ padding: "1rem" }}>
-      <Button variant="outline-success">  <Link className='link' smooth={true} style={{textDecoration:"none"}} href="/dashboard/addblog">Add Blog</Link></Button>
-
-      <div style={{ marginTop: "1rem" }} className="blogs">
+        {!blog &&  <Button variant="outline-success" onClick={setBlog.bind(this,true)} className='link' smooth={true} style={{textDecoration:"none"}} >Add Blog</Button>}
+     
+        {blog ? <Addblog/> :  <div style={{ marginTop: "1rem" }} className="blogs">
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -37,7 +38,8 @@ function blog() {
             </tr>
           </tbody>
         </Table>
-      </div>
+      </div>}
+     
     </div>
 
   )
