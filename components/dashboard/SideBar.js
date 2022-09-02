@@ -1,13 +1,21 @@
 import React from "react";
-import Style from '../../public/static/adminSideBar'
-function sideBar() {
+import Style from '../../public/static/adminSideBar.module.css'
+function Sidebar() {
+
+  const logout = () =>{
+    console.log("logging out")
+    Cookies.set("Loggedin",false);
+    window.location.replace('http://localhost:3000');
+}
+  
+
   return (
 
     <div className={Style.container}>
       <ul>
         <li>
           <a href="#" data-text="Home">
-            dashboard
+            Dashboard
           </a>
         </li>
         <li>
@@ -30,10 +38,15 @@ function sideBar() {
             Portfolio
           </a>
         </li>
+        <li>
+      <button onClick={logout}>LogOut</button>
+          
+        </li>
       
       </ul>
+
     </div>
   );
 }
 
-export default sideBar;
+export default Sidebar;

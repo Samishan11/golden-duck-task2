@@ -2,7 +2,7 @@ import React from 'react'
 import { NextResponse } from 'next/server';
 import Cookies from 'js-cookie';
 import {useRouter} from 'next/router'
-import Project from '../components/dashboard/Project'
+import SideBar from '../components/dashboard/SideBar'
 
 function dashboard(req) {
 
@@ -19,7 +19,7 @@ function dashboard(req) {
   return (
 
     <div>
-      <Project/>
+      <SideBar/>
         <button onClick={logout}>LogOut</button>
     </div>
   )
