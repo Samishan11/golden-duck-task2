@@ -3,8 +3,6 @@ import Style from "../../public/static/adminblog.module.css";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
-import Addblog from './addblog';
-import { useState } from 'react';
 
 function blog() {
 
@@ -12,8 +10,10 @@ function blog() {
 
 
   return (
-    <div className='body'>
-      <div className="blogs">
+    <div className='body' style={{ padding: "1rem" }}>
+      <Button variant="outline-success">  <Link className='link' smooth={true} style={{textDecoration:"none"}} href="/dashboard/addblog">Add Blog</Link></Button>
+
+      <div style={{ marginTop: "1rem" }} className="blogs">
         <Table striped bordered hover>
           <thead>
             <tr>
