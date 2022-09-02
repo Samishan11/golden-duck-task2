@@ -7,6 +7,7 @@ import Style from "../public/static/adminSideBar.module.css";
 import Feedback from "./dashboard/feedback";
 import Blog from "./dashboard/blog";
 import DashboardComponent from "../components/dashboard/DashboardComponent";
+import Project from "./dashboard/Project";
 
 function dashboard(req) {
   const router = useRouter();
@@ -88,7 +89,7 @@ function dashboard(req) {
           </li>
         </ul>
       </div>
-      {blog ? <Blog /> : feedback ? <Feedback /> : <DashboardComponent />}
+      {blog ? <Blog /> : feedback ? <Feedback /> : project ? <Project/> : <DashboardComponent />}
     </div>
   );
 }
