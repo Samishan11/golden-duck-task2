@@ -8,9 +8,8 @@ export default function middleware(req){
         const session = req.cookies.get('Loggedin');
     
 
-        console.log(check)
         
-        if (session === "false") {
+        if (session === "false" || session===undefined) {
             console.log('test')
             return NextResponse.redirect('http://localhost:3000');
         }
@@ -20,7 +19,5 @@ export default function middleware(req){
       }
 
     return NextResponse.next();
-
-    
 
 }

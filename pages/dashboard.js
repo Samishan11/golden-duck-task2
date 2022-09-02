@@ -2,6 +2,7 @@ import React from 'react'
 import { NextResponse } from 'next/server';
 import Cookies from 'js-cookie';
 import {useRouter} from 'next/router'
+import Project from '../components/dashboard/Project'
 
 function dashboard(req) {
 
@@ -16,8 +17,9 @@ function dashboard(req) {
 
 
   return (
-    <div>Sensitive data
 
+    <div>
+      <Project/>
         <button onClick={logout}>LogOut</button>
     </div>
   )
