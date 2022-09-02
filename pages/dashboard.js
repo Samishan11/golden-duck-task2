@@ -8,6 +8,8 @@ import Feedback from "./dashboard/feedback";
 import Blog from "./dashboard/blog";
 import DashboardComponent from "../components/dashboard/DashboardComponent";
 import Portfolio from "./dashboard/Portfolio"
+import Project from "./dashboard/Project";
+
 function dashboard(req) {
   const router = useRouter();
 
@@ -101,7 +103,7 @@ function dashboard(req) {
           </li>
         </ul>
       </div>
-      {blog ? <Blog /> : feedback ? <Feedback /> : portfolio ? <Portfolio/> : <DashboardComponent />}
+      {blog ? <Blog /> : feedback ? <Feedback /> : portfolio ? <Portfolio/>  : project ? <Project/> :<DashboardComponent />}
     </div>
   );
 }
