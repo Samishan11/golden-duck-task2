@@ -6,7 +6,6 @@ import SideBar from "../components/dashboard/SideBar";
 import Style from "../public/static/adminSideBar.module.css";
 import Feedback from "./dashboard/feedback";
 import Blog from "./dashboard/blog";
-import Link from "next/link";
 import DashboardComponent from "../components/dashboard/DashboardComponent";
 
 function dashboard(req) {
@@ -18,42 +17,78 @@ function dashboard(req) {
     window.location.replace("http://localhost:3000");
   };
 
+  const [blog, setBlog] = useState(false);
+  const [dashboard, setDashboard] = useState(false);
+  const [feedback, setFeedback] = useState(false);
+  const [project, setProject] = useState(false);
+
   return (
     <div className={Style.parent}>
       <div className={Style.container}>
         <ul>
           <li>
-            <Link href="/dashboard" data-text="Home">
+            <a
+              data-text="Home"
+              onClick={() => {
+                setDashboard(true);
+                setBlog(false);
+                setProject(false);
+                setFeedback(false);
+              }}
+            >
               Dashboard
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/dashboard/Blog" data-text="About">
+            <a
+              data-text="About"
+              onClick={() => {
+                setDashboard(false);
+                setBlog(true);
+                setProject(false);
+                setFeedback(false);
+              }}
+            >
               Blogs
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/dashboard/project" data-text="Services">
+            <a
+              data-text="Services"
+              onClick={() => {
+                setDashboard(false);
+                setBlog(false);
+                setProject(true);
+                setFeedback(false);
+              }}
+            >
               Projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/dashboard/Feedback" data-text="Work">
+            <a
+              data-text="Work"
+              onClick={() => {
+                setDashboard(false);
+                setBlog(false);
+                setProject(false);
+                setFeedback(true);
+              }}
+            >
               Feedbacks
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/dashboard/portfolio" data-text="Team">
+            <a  data-text="Team">
               Portfolio
-            </Link>
+            </a>
           </li>
           <li>
             <button onClick={logout}>LogOut</button>
           </li>
         </ul>
       </div>
-
-      <DashboardComponent />
+      {blog ? <Blog /> : feedback ? <Feedback /> : <DashboardComponent />}
     </div>
   );
 }

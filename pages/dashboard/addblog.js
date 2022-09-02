@@ -6,7 +6,7 @@ import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 
 
-const addblog = () => {
+const Addblog = () => {
     const { quill, quillRef } = useQuill();
     const [value, setValue] = useState();
 
@@ -40,4 +40,4 @@ const addblog = () => {
         </div>
     )
 }
-export default addblog;
+export default Addblog;
