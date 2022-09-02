@@ -7,7 +7,7 @@ import Style from "../public/static/adminSideBar.module.css";
 import Feedback from "./dashboard/feedback";
 import Blog from "./dashboard/blog";
 import DashboardComponent from "../components/dashboard/DashboardComponent";
-
+import Portfolio from "./dashboard/Portfolio"
 function dashboard(req) {
   const router = useRouter();
 
@@ -21,6 +21,7 @@ function dashboard(req) {
   const [dashboard, setDashboard] = useState(false);
   const [feedback, setFeedback] = useState(false);
   const [project, setProject] = useState(false);
+  const [portfolio, setPortfolio] = useState(false);
 
   return (
     <div className={Style.parent}>
@@ -34,6 +35,7 @@ function dashboard(req) {
                 setBlog(false);
                 setProject(false);
                 setFeedback(false);
+                setPortfolio(false);
               }}
             >
               Dashboard
@@ -47,6 +49,7 @@ function dashboard(req) {
                 setBlog(true);
                 setProject(false);
                 setFeedback(false);
+                setPortfolio(false);
               }}
             >
               Blogs
@@ -60,6 +63,7 @@ function dashboard(req) {
                 setBlog(false);
                 setProject(true);
                 setFeedback(false);
+                setPortfolio(false);
               }}
             >
               Projects
@@ -73,13 +77,22 @@ function dashboard(req) {
                 setBlog(false);
                 setProject(false);
                 setFeedback(true);
+                setPortfolio(false);
               }}
             >
               Feedbacks
             </a>
           </li>
           <li>
-            <a  data-text="Team">
+            <a data-text="Team"
+              onClick={() => {
+                setDashboard(false);
+                setBlog(false);
+                setProject(false);
+                setFeedback(false);
+                setPortfolio(true);
+              }}
+            >
               Portfolio
             </a>
           </li>
@@ -88,7 +101,7 @@ function dashboard(req) {
           </li>
         </ul>
       </div>
-      {blog ? <Blog /> : feedback ? <Feedback /> : <DashboardComponent />}
+      {blog ? <Blog /> : feedback ? <Feedback /> : portfolio ? <Portfolio/> : <DashboardComponent />}
     </div>
   );
 }

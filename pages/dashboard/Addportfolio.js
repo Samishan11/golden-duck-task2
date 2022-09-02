@@ -10,19 +10,17 @@ const Addportfolio = () => {
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Portfolio Title</Form.Label>
-                    <Form.Control type="email" placeholder="Enter blog title" />
+                    <Form.Control type="email" placeholder="Enter portfolio title" />
                 </Form.Group>
-
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control type="email" placeholder="Enter portfolio catagory" />
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Portfolio Image</Form.Label>
                     <Form.Control type="file" placeholder="" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Blog Description</Form.Label>
-                    <div style={{ height: "10rem" }} ref={quillRef} />
-                </Form.Group>
             </Form>
-            <Button variant="outline-primary">Add Blog</Button>
+            <Button variant="outline-primary">Add Portfolio</Button>
         </div>
     )
 }
