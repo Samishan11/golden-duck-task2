@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import SideBar from "../components/dashboard/SideBar";
 import Style from "../public/static/adminSideBar.module.css";
-import Feedback from "./dashboard/feedback";
+import Feedback from "./dashboard/Feedback";
 import Blog from "./dashboard/blog";
 import DashboardComponent from "../components/dashboard/DashboardComponent";
 import Portfolio from "./dashboard/Portfolio"
