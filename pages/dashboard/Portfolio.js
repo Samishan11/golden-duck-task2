@@ -19,15 +19,6 @@ function blog() {
 
     const [change, setChange] = useState(false)
 
-    const token = Cookies.get('accessToken')
-    const config = {
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "multipart/form-data",
-            "Authorization": "Bearer " + token
-        }
-    }
-
     var fd = new FormData();
     fd.append("title", title)
     fd.append("description", description)
@@ -41,10 +32,14 @@ function blog() {
     // add portfolio
     const addPortfolio = async () => {
         try {
-            const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/portfolio/post", config, fd)
+            const res = await axios.post("http://localhost:8000/api/v4/portfolio/post", fd)
             console.log(res)
             console.log("res")
-
+            if (change) {
+                setChange(false)
+            } else {
+                setChange(true)
+            }
         } catch (error) {
             console.log(error)
         }
@@ -53,14 +48,12 @@ function blog() {
     // edit portfolio
     const editPortfolio = async () => {
         try {
-            const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/update/${id}`, config, fd)
-            console.log(res)
+            const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/update/${id}`, fd)
             if (change) {
                 setChange(false)
             } else {
                 setChange(true)
             }
-
         } catch (error) {
             console.log(error)
         }
@@ -95,7 +88,7 @@ function blog() {
     //  delete portfolio
     const deletePortfolio = async (id) => {
         try {
-            const res = await axios.delete(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/delete/${id}`, config)
+            const res = await axios.delete(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/delete/${id}`)
             console.log(res)
             if (change) {
                 setChange(false)
