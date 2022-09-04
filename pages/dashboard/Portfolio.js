@@ -12,16 +12,16 @@ function blog() {
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
     const [id, setId] = useState('');
-    const [title, setTitle] = useState('');
-    const [description, setDesc] = useState('');
+    const [brand_name, setBrandname] = useState('');
+    const [catagory, setCatagory] = useState('');
     const [image, setImage] = useState('');
     const [portfolio, setPortfolio] = useState([]);
 
     const [change, setChange] = useState(false)
 
     var fd = new FormData();
-    fd.append("title", title)
-    fd.append("description", description)
+    fd.append("brand_name", brand_name)
+    fd.append("catagory", catagory)
     fd.append("image", image)
 
     const handleClose = () => setShow(false);
@@ -49,6 +49,7 @@ function blog() {
     const editPortfolio = async () => {
         try {
             const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/update/${id}`, fd)
+        
             if (change) {
                 setChange(false)
             } else {
@@ -76,9 +77,9 @@ function blog() {
     const getSinglePortfolio = async (id) => {
         try {
             const res = await axios.get(`http://localhost:8000/api/v4/portfolio/${id}`)
-            setTitle(res.data.data.brand_name)
+            setBrandname(res.data.data.brand_name)
             setId(res.data.data._id)
-            setDesc(res.data.data.catagory)
+            setCatagory(res.data.data.catagory)
             setImage(res.data.data.imgae)
         } catch (error) {
             console.log(error)
@@ -117,11 +118,11 @@ function blog() {
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Portfolio Title</Form.Label>
-                            <Form.Control onChange={e => setTitle(e.target.value)} type="" placeholder="Enter portfolio title" />
+                            <Form.Control onChange={e => setBrandname(e.target.value)} type="" placeholder="Enter portfolio title" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Portfolio Description</Form.Label>
-                            <Form.Control onChange={e => setDesc(e.target.value)} type="" placeholder="Enter portfolio catagory" />
+                            <Form.Control onChange={e => setCatagory(e.target.value)} type="" placeholder="Enter portfolio catagory" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Portfolio Image</Form.Label>
@@ -184,11 +185,11 @@ function blog() {
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Portfolio Title</Form.Label>
-                                <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter portfolio title" />
+                                <Form.Control value={brand_name} onChange={e => setBrandname(e.target.value)} type="" placeholder="Enter portfolio title" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Portfolio Description</Form.Label>
-                                <Form.Control value={description} onChange={e => setDesc(e.target.value)} type="" placeholder="Enter portfolio catagory" />
+                                <Form.Control value={catagory} onChange={e => setCatagory(e.target.value)} type="" placeholder="Enter portfolio catagory" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Portfolio Image</Form.Label>
