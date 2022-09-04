@@ -11,6 +11,7 @@ function blog() {
 
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
+    const [id, setId] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDesc] = useState('');
     const [image, setImage] = useState('');
@@ -48,15 +49,28 @@ function blog() {
             console.log(error)
         }
     }
+
+    // edit portfolio
+    const editPortfolio = async () => {
+        try {
+            const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/update/${id}`, config, fd)
+            console.log(res)
+            if (change) {
+                setChange(false)
+            } else {
+                setChange(true)
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     // get all portfolio
     useEffect(() => {
         const getPortfolio = async () => {
             try {
                 const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/portfolio")
-                console.log(res.data)
-                setTitle(res.data.data.brand_name)
-                setDesc(res.data.data.catagory)
-                setImage(res.data.data.image)
                 setPortfolio(res.data.data)
             } catch (error) {
                 console.log(error)
@@ -64,6 +78,19 @@ function blog() {
         }
         getPortfolio()
     }, [change])
+
+    // get single portfolio
+    const getSinglePortfolio = async (id) => {
+        try {
+            const res = await axios.get(`http://localhost:8000/api/v4/portfolio/${id}`)
+            setTitle(res.data.data.brand_name)
+            setId(res.data.data._id)
+            setDesc(res.data.data.catagory)
+            setImage(res.data.data.imgae)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     //  delete portfolio
     const deletePortfolio = async (id) => {
@@ -141,7 +168,7 @@ function blog() {
                                                     <td>{data.catagory}</td>
                                                     <td>Admin</td>
                                                     <td>{data.date}</td>
-                                                    <td> <Button onClick={handleShow1} variant="outline-success">Edit</Button>  <Button onClick={deletePortfolio.bind(this, data._id)} variant="outline-danger">Delete</Button></td>
+                                                    <td> <Button onClick={() => { handleShow1(); getSinglePortfolio(data._id); }} variant="outline-success">Edit</Button>  <Button onClick={deletePortfolio.bind(this, data._id)} variant="outline-danger">Delete</Button></td>
                                                 </tr>
                                             )
                                         })
@@ -158,13 +185,13 @@ function blog() {
                     keyboard={false}
                 >
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal title</Modal.Title>
+                        <Modal.Title>Edit Portfolio</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Portfolio Title</Form.Label>
-                                <Form.Control value={'title'} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter portfolio title" />
+                                <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter portfolio title" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Portfolio Description</Form.Label>
@@ -180,7 +207,7 @@ function blog() {
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button onClick={addPortfolio} variant="primary">Add Portfolio</Button>
+                        <Button onClick={editPortfolio} variant="primary">Add Portfolio</Button>
                     </Modal.Footer>
                 </Modal>
             </div>
