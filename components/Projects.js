@@ -1,10 +1,20 @@
 import React from "react";
 import Style from "../public/static/project.module.css";
-import {Link} from "react-scroll";
-
-import Image from "next/image";
+import { Link } from "react-scroll";
+import axios from "axios";
 
 function Projects() {
+  const [projects, setProjects] = React.useState([]);
+  const getProject = async () => {
+
+    const response = await axios.get('https://golden-duck-it.herokuapp.com/api/v4/getProject');
+    console.log(response.data.projects)
+    setProjects(response.data.projects)
+  }
+
+  React.useEffect(() => {
+    getProject();
+  }, [])
   return (
     <div className={Style.container}>
       <div>
@@ -12,37 +22,24 @@ function Projects() {
         <h2>The quality and style we follow</h2>
       </div>
       <div className={Style.projectContainer}>
-        <div className={Style.project}>
-          <div className={Style.projectImage}>
-            <img
-            className="Image"
-              src="assets/images/asset 8.png"
-            />
+        {
+          projects.map(data => {
+            return (
+              <div className={Style.project}>
+                <div className={Style.projectImage}>
+                  <img
+                    className="Image"
+                    src={`http://localhost:8000/${data.image}`}
+                  />
 
-          </div>
-          <p>JAC Motors Website</p>
-          <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
-        </div>
-        <div className={Style.project}>
-        <div className={Style.projectImage}>
-          <img
-              className="Image"
-                src="assets/images/asset 9.png"
-              />
-        </div>
-          <p>White Horse Recruitment Pvt. Ltd.</p>
-          <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
-        </div>
-        <div className={Style.project}>
-        <div className={Style.projectImage}>
-          <img
-            className="Image"
-              src="assets/images/asset 10.png"
-            />
-        </div>
-          <p>British Management College</p>
-          <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
-        </div>
+                </div>
+                <p>{data.title}</p>
+                <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
+              </div>
+            )
+
+          })
+        }
       </div>
     </div>
   );
