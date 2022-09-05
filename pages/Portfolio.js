@@ -8,23 +8,23 @@ import axios from 'axios';
 const Portfolio = () => {
     // get all portfolio
     const [portfolio, setPortfolio] = useState([]);
-    useEffect(() => {
-        const getPortfolio = async () => {
-            try {
-                const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/portfolio")
-                setPortfolio(res.data.data)
-                console.log(res.data.data)
-            } catch (error) {
-                console.log(error)
-            }
+    const getPortfolio = async () => {
+        try {
+            const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/portfolio")
+            setPortfolio(res.data.data)
+        } catch (error) {
+            console.log(error)
         }
+    }
+    useEffect(() => {
         getPortfolio()
     }, [])
 
+    // buttons
     const buttons = [
         {
             name: "All",
-            value: "all"
+            value: "All"
         },
         {
             name: "Logo Design",
@@ -36,13 +36,32 @@ const Portfolio = () => {
         },
         {
             name: "Website Development",
-            value: "Website Development"
+            value: "Web Development"
         },
         {
             name: "Website Redesign",
             value: "Website Redesign"
         }
     ];
+
+    // filter data
+
+    const [filterportfolio, setFiltredPortfolio] = useState([]);
+    useEffect(() => {
+        setFiltredPortfolio(getPortfolio());
+    }, []);
+    function filter(val) {
+        let filterdata = portfolio.filter(type => type.catagory === val);
+        console.log(filterdata)
+        return filterdata;
+    }
+    function handlePortfolio(value) {
+        let catagory = value;
+        catagory !== "all"
+            ? setFiltredPortfolio(filter(catagory))
+            : setFiltredPortfolio(getPortfolio());
+    }
+
 
     return (
         <div className={Style.contianer}>
@@ -59,7 +78,7 @@ const Portfolio = () => {
                     {
                         buttons.map((data, ind) => {
                             return (
-                                <li><a>{data.name}</a></li>
+                                <li><a onClick={handlePortfolio.bind(this, data.value)}>{data.name}</a></li>
                             )
                         })
                     }
@@ -68,22 +87,22 @@ const Portfolio = () => {
             <div className={Style.branchmain}>
                 <div className={Style.branch}>
                     {
-                            portfolio.map(data => {
-                                return (
-                                    <a href="/project/Project">
-                                        <div className={Style.main}>
-                                            <div className={Style.body}>
-                                                <img src={`http://localhost:8000/${data.image}`} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
-                                                <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
-                                            </div>
-                                            <div className="content">
-                                                <p className={Style.companyname}>{data.brand_name}</p>
-                                                <p className={Style.work}>{data.catagory}</p>
-                                            </div>
+                        portfolio.map(data => {
+                            return (
+                                <a href="/project/Project">
+                                    <div className={Style.main}>
+                                        <div className={Style.body}>
+                                            <img src={`http://localhost:8000/${data.image}`} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
+                                            <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
                                         </div>
-                                    </a>
-                                )
-                            })
+                                        <div className="content">
+                                            <p className={Style.companyname}>{data.brand_name}</p>
+                                            <p className={Style.work}>{data.catagory}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            )
+                        })
                     }
                 </div>
             </div>
