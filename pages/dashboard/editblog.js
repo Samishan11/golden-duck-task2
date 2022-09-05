@@ -8,9 +8,9 @@ import axios from "axios";
 import Blog from "./blog"
 const Editblog = ({data}) => {
     const { quill, quillRef } = useQuill();
-    const [description, setDescription] = useState();
+    const [description, setDescription] = useState(data.description);
 
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState(data.title);
     const [image, setImage] = useState('');
 
 
@@ -45,7 +45,7 @@ const Editblog = ({data}) => {
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Blog Title</Form.Label>
-                    <Form.Control value={data.title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
+                    <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
