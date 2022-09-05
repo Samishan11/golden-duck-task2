@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-function blog() {
+function Portfolio() {
 
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
@@ -46,9 +46,11 @@ function blog() {
     }
 
     // edit portfolio
-    const editPortfolio = async () => {
+    const editPortfolio = async (id) => {
+        console.log(id)
         try {
             const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/update/${id}`, fd)
+            console.log(res.data.data)
         
             if (change) {
                 setChange(false)
@@ -66,6 +68,7 @@ function blog() {
             try {
                 const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/portfolio")
                 setPortfolio(res.data.data)
+                console.log(res.data.data)
             } catch (error) {
                 console.log(error)
             }
@@ -81,6 +84,7 @@ function blog() {
             setId(res.data.data._id)
             setCatagory(res.data.data.catagory)
             setImage(res.data.data.imgae)
+            console.log(res.data.data._id)
         } catch (error) {
             console.log(error)
         }
@@ -161,7 +165,7 @@ function blog() {
                                                     <td>{data.brand_name}</td>
                                                     <td>{data.catagory}</td>
                                                     <td>Admin</td>
-                                                    <td>{data.date}</td>
+                                                    <td>{data.image}</td>
                                                     <td> <Button onClick={() => { handleShow1(); getSinglePortfolio(data._id); }} variant="outline-success">Edit</Button>  <Button onClick={deletePortfolio.bind(this, data._id)} variant="outline-danger">Delete</Button></td>
                                                 </tr>
                                             )
@@ -201,7 +205,7 @@ function blog() {
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button onClick={editPortfolio} variant="primary">Add Portfolio</Button>
+                        <Button onClick={editPortfolio.bind(this,id)} variant="primary">Edit Portfolio</Button>
                     </Modal.Footer>
                 </Modal>
             </div>
@@ -211,4 +215,4 @@ function blog() {
     )
 }
 
-export default blog
+export default Portfolio;

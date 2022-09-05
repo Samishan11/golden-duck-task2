@@ -4,15 +4,23 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react"
-import Link from "next/link"
 import Addblog from './addblog';
 import axios from "axios";
+import Editblog from './editblog';
+const parse = require('html-react-parser');
 
 function blog() {
 
   const [blog, setBlog] = useState(false);
   const [blogs, setBlogs] = useState([]);
+  const [singleblogs, setSingleBlogs] = useState([]);
+  const [showeditblog, setShotBlog] = useState(false);
   const [change, setChange] = useState(false)
+
+  const redirectToEdit = (i) => {
+    setSingleBlogs(blogs[i]);
+    setShotBlog(true)
+  }
 
   // get blogs
   React.useEffect(() => {
@@ -20,6 +28,7 @@ function blog() {
       try {
         const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/blog")
         setBlogs(res.data.data)
+        console.log(res.data.data)
 
       } catch (error) {
         console.log(error)
@@ -45,40 +54,46 @@ function blog() {
 
 
   return (
-    <div className='body' style={{ padding: "1rem" }}>
-      {!blog && <Button variant="outline-success" onClick={setBlog.bind(this, true)} className='link' smooth={true} style={{ textDecoration: "none" }} >Add Blog</Button>}
+    <>
+      {
+        showeditblog ? <Editblog data={singleblogs} /> :
+          <div className='body' style={{ padding: "1rem" }}>
+            {!blog && <Button variant="outline-success" onClick={setBlog.bind(this, true)} className='link' smooth={true} style={{ textDecoration: "none" }} >Add Blog</Button>}
 
-      {blog ? <Addblog /> : <div style={{ marginTop: "1rem" }} className="blogs">
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Blog Title</th>
-              <th>Aurthor</th>
-              <th>Date</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              blogs.map((data, ind) => {
-                return (
+            {blog ? <Addblog /> : <div style={{ marginTop: "1rem" }} className="blogs">
+              <Table striped bordered hover>
+                <thead>
                   <tr>
-                    <td>{ind+1}</td>
-                    <td>{data.title}</td>
-                    <td>Admin</td>
-                    <td>{data.date}</td>
-                    <td> <Button variant="outline-success">Edit</Button>  <Button onClick={deleteBlog.bind(this,data._id)} variant="outline-danger">Delete</Button></td>
+                    <th>#</th>
+                    <th>Blog Title</th>
+                    <th>Aurthor</th>
+                    <th>Date</th>
+                    <th>Action</th>
                   </tr>
-                )
-              })
-            }
+                </thead>
+                <tbody>
+                  {
+                    blogs.map((data, ind) => {
+                      return (
+                        <tr>
+                          <td>{ind + 1}</td>
+                          <td>{data.title}</td>
+                          <td>Admin</td>
+                          <td>{parse(data.description)}</td>
+                          <td> <Button onClick={redirectToEdit.bind(this, ind)} variant="outline-success">Edit</Button>  <Button onClick={deleteBlog.bind(this, data._id)} variant="outline-danger">Delete</Button></td>
+                        </tr>
+                      )
+                    })
+                  }
 
-          </tbody>
-        </Table>
-      </div>}
+                </tbody>
+              </Table>
+            </div>}
 
-    </div>
+          </div>
+      }
+    </>
+
 
   )
 }

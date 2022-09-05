@@ -6,7 +6,7 @@ import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import axios from "axios";
 import Blog from "./blog"
-const Addblog = () => {
+const Editblog = ({data}) => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState();
 
@@ -14,12 +14,12 @@ const Addblog = () => {
     const [image, setImage] = useState('');
 
 
-
     React.useEffect(() => {
         if (quill) {
             quill.on('text-change', () => {
                 setDescription(quillRef.current.firstChild.innerHTML)
             });
+            setDescription(quillRef.current.firstChild.innerHTML = data.description)
         }
     }, [quill]);
 
@@ -29,9 +29,9 @@ const Addblog = () => {
     fd.append("description", description)
     fd.append("image", image)
 
-    const addBlog = async () => {
+    const EditBlog = async () => {
         try {
-            const res = await axios.post("http://localhost:8000/api/v4/blog/post", fd)
+            const res = await axios.put(`http://localhost:8000/api/v4/blog/update/${data._id}`, fd)
             console.log(res.data)
         } catch (error) {
             console.log(error)
@@ -45,7 +45,7 @@ const Addblog = () => {
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Blog Title</Form.Label>
-                    <Form.Control onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
+                    <Form.Control value={data.title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -54,11 +54,11 @@ const Addblog = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Blog Description</Form.Label>
-                   <pre> <div style={{ height: "10rem" }} ref={quillRef} /> </pre>
+                   <pre> <div id="textarea" style={{ height: "10rem" }} ref={quillRef} /> </pre>
                 </Form.Group>
             </Form>
-            <Button onClick={addBlog} variant="outline-primary">Add Blog</Button>
+            <Button onClick={EditBlog} variant="outline-primary">Add Blog</Button>
         </div>
     )
 }
-export default Addblog;
+export default Editblog;
