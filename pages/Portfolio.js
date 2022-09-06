@@ -46,20 +46,26 @@ const Portfolio = () => {
 
     // filter data
 
-    const [filterportfolio, setFiltredPortfolio] = useState([]);
+     function getPortfoliodata() {
+        const data = portfolio;
+        return data;
+      }
+
+    const [filterportfolio, setFiltredPortfolio] = useState(null);
     useEffect(() => {
-        setFiltredPortfolio(getPortfolio());
+        console.log(getPortfoliodata())
+        setFiltredPortfolio(getPortfoliodata());
     }, []);
     function filter(val) {
         let filterdata = portfolio.filter(type => type.catagory === val);
-        console.log(filterdata)
         return filterdata;
     }
     function handlePortfolio(value) {
+        console.log(filterportfolio.length)
         let catagory = value;
-        catagory !== "all"
+        catagory !== "All"
             ? setFiltredPortfolio(filter(catagory))
-            : setFiltredPortfolio(getPortfolio());
+            : setFiltredPortfolio(getPortfoliodata());
     }
 
 
@@ -76,7 +82,7 @@ const Portfolio = () => {
             <div className={Style.Links}>
                 <ul className={Style.ul}>
                     {
-                        buttons.map((data, ind) => {
+                        buttons.map((data) => {
                             return (
                                 <li><a onClick={handlePortfolio.bind(this, data.value)}>{data.name}</a></li>
                             )
@@ -87,7 +93,8 @@ const Portfolio = () => {
             <div className={Style.branchmain}>
                 <div className={Style.branch}>
                     {
-                        portfolio.map(data => {
+                        filterportfolio &&
+                        filterportfolio.map(data => {
                             return (
                                 <a href="/project/Project">
                                     <div className={Style.main}>

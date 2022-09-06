@@ -79,7 +79,8 @@ function blog() {
                           <td>{ind + 1}</td>
                           <td>{data.title}</td>
                           <td>Admin</td>
-                          <td>{parse(data.description)}</td>
+                          <td>{data.date}</td>
+                          {/* <td>{parse(data.description)}</td> */}
                           <td> <Button onClick={redirectToEdit.bind(this, ind)} variant="outline-success">Edit</Button>  <Button onClick={deleteBlog.bind(this, data._id)} variant="outline-danger">Delete</Button></td>
                         </tr>
                       )
