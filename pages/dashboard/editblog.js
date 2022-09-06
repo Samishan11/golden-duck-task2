@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import axios from "axios";
-import Blog from "./blog"
 const Editblog = ({data}) => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState(data.description);
@@ -26,12 +25,13 @@ const Editblog = ({data}) => {
     // add blog
     var fd = new FormData();
     fd.append("title", title)
+    fd.append("id", data._id)
     fd.append("description", description)
     fd.append("image", image)
 
     const EditBlog = async () => {
         try {
-            const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/blog/update/${data._id}`, fd)
+            const res = await axios.put(`http://golden-duck-it.herokuapp.com/api/v4/blogUpdate`, fd)
             console.log(res.data)
         } catch (error) {
             console.log(error)

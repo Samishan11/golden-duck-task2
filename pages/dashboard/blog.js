@@ -7,6 +7,7 @@ import { useState } from "react"
 import Addblog from './addblog';
 import axios from "axios";
 import Editblog from './editblog';
+const parse = require('html-react-parser');
 
 function blog() {
 
