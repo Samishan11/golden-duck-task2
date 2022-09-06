@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import Cookies from 'js-cookie';
 
 function feedback() {
 
