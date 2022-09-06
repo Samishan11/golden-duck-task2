@@ -31,7 +31,7 @@ const Addblog = () => {
 
     const addBlog = async () => {
         try {
-            const res = await axios.post("http://localhost:8000/api/v4/blog/post", fd)
+            const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/blog/post", fd)
             console.log(res.data)
         } catch (error) {
             console.log(error)

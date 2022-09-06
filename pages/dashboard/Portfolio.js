@@ -79,7 +79,7 @@ function Portfolio() {
     // get single portfolio
     const getSinglePortfolio = async (id) => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/v4/portfolio/${id}`)
+            const res = await axios.get(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/${id}`)
             setBrandname(res.data.data.brand_name)
             setId(res.data.data._id)
             setCatagory(res.data.data.catagory)

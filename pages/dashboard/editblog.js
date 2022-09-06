@@ -31,7 +31,7 @@ const Editblog = ({data}) => {
 
     const EditBlog = async () => {
         try {
-            const res = await axios.put(`http://localhost:8000/api/v4/blog/update/${data._id}`, fd)
+            const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/blog/update/${data._id}`, fd)
             console.log(res.data)
         } catch (error) {
             console.log(error)

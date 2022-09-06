@@ -40,7 +40,7 @@ function Blog() {
                     query: data,
                   }}>
                     <div className={Style.blogImage}>
-                      <img src={`http://localhost:8000/${data.image}`} alt='' />
+                      <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt='' />
                     </div>
                   </Link>
 

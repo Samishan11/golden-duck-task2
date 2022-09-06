@@ -14,7 +14,7 @@ function Blog() {
             <div className={Style.container}>
                 <div className={Style.row}>
                     <div className={Style.col1}>
-                        <img src={`http://localhost:8000/${data.image}`} alt="" />
+                        <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt="" />
                     </div>
                     <div className={Style.col2}>
                         <img className={Style.img} src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="" />
