@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Style from "../public/static/blog.module.css";
+import Link from "next/link";
 const parse = require('html-react-parser');
 
 function Blog() {
@@ -34,17 +35,20 @@ function Blog() {
             blogs.map((data) => {
               return (
                 <div className={Style.blog}>
-                  <a href="https://it.goldenduck.com.np/ecommerce-website-development-in-nepal/">
+                  <Link href={{
+                    pathname: "/blog/Blog",
+                    query: data,
+                  }}>
                     <div className={Style.blogImage}>
                       <img src={`http://localhost:8000/${data.image}`} alt='' />
                     </div>
-                  </a>
+                  </Link>
 
                   <div className={Style.blogDescription}>
                     <h2>{data.title}</h2>
                     <h5>Website Development</h5>
                     <p>
-                      {parse(data.description)}
+                      {parse(data.description.slice(0, 300))}
                     </p>
                   </div>
                 </div>
