@@ -23,7 +23,7 @@ function admin() {
         
           try {
             const { data } = await axios.post(
-              "http://localhost:8000/api/v4/admin/login",
+              "https://golden-duck-it.herokuapp.com/api/v4/admin/login",
               {
                 email,
                 password,
