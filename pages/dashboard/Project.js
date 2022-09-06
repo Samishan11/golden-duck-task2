@@ -23,7 +23,8 @@ function Project() {
   const [singleProjectId, setSingleProjectId] = useState();
   const [change, setChange] = useState(false)
   const [projectDeleteId, setProjectDeleteId] = useState();
- 
+  const [show, setShow] = useState(false);
+  const [showEdit, setEditShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -254,7 +255,7 @@ function Project() {
             <Button variant="secondary" onClick={handleEditClose}>
               Close
             </Button>
-            <Button onClick={editProject} variant="primary">Add Portfolio</Button>
+            <Button onClick={editProject} variant="primary">Update Portfolio</Button>
           </Modal.Footer>
         </Modal>
       </div>
