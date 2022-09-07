@@ -12,7 +12,6 @@
 .formBody{
     display: flex;
     flex-direction: column;
-
 }
 
 .container h4{
@@ -23,28 +22,36 @@
     width: 100%;
     margin-top: 2%;
     padding: 0;
-    padding: 1%;
+    border:1px solid black;
 
 }
 
-.formBody input{
-    border-radius: 5px 5px 5px 5px;
-    overflow: hidden;
-    border-color: #FFFFFF;
-    border: 0 solid #333;
-    background-color: #f4f7fc;
+.formBody input::placeholder{
+    padding: 2%;
 }
 
 .heading input{
-    border-radius: 5px 5px 5px 5px;
     overflow: hidden;
     border-color: #FFFFFF;
-    border: 0 solid #333;
-    background-color: #f4f7fc;
+    border: 1px solid black;
+    width: 40%;
+    padding: 1%;
+}
+
+.heading input::placeholder{
+    padding: 2%;
+}
+
+
+
+.heading textarea{
+    overflow: hidden;
+    border-color: #FFFFFF;
+    border: 1px solid black;
 }
 
 .heading input{
-    padding: 1%;
+    /* padding: 1%; */
     font-family: 'Montserrat',sans-serif;
 }
 
@@ -57,13 +64,11 @@
 .formTextArea{
     height: 80px;
     padding: 1%;
-    border-radius: 5px 5px 5px 5px;
     overflow: hidden;
-    border-color: #FFFFFF;
-    border: 0 solid #333;
-    background-color: #f4f7fc;
+    background-color: white;
     margin-top: 4%;
     font-family: 'Montserrat',sans-serif;
+    border: 1px solid black;
 }
 .formEmail{
     height: 40px;
@@ -94,3 +99,27 @@
     color: #0477bf;
 }
 
+.choice{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choice select{
+
+    padding: 3%;
+    font-family: 'Montserrat';
+    border: 1px solid black;
+
+}
+
+.mainContainer{
+    height: 100%;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
