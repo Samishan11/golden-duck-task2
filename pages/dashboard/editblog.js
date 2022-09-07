@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import axios from "axios";
+import FormData from "form-data";
 const Editblog = ({data}) => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState(data.description);
