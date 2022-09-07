@@ -46,7 +46,7 @@ function Blog() {
 
                   <div className={Style.blogDescription}>
                     <h2>{data.title}</h2>
-                    <h5>Website Development</h5>
+                    <h5>{data.catagory}</h5>
                     <p>
                       {parse(data.description.slice(0, 300))}
                     </p>

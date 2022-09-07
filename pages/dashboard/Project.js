@@ -91,7 +91,7 @@ function Project() {
 
 
   const addProject = async (e) => {
-
+    handleClose()
     e.preventDefault();
     try {
       const response = await axios.post('https://golden-duck-it.herokuapp.com/api/v4/postProject',
@@ -108,8 +108,7 @@ function Project() {
   }
 
   const editProject = async (e) => {
-
-    console.log(editFormData)
+    handleEditClose()
     try {
       const response = await axios.put('https://golden-duck-it.herokuapp.com/api/v4/editProject',
         editFormData

@@ -66,6 +66,7 @@ function blog() {
                   <tr>
                     <th>#</th>
                     <th>Blog Title</th>
+                    <th>Blog Catagory</th>
                     <th>Aurthor</th>
                     <th>Date</th>
                     <th>Action</th>
@@ -78,6 +79,7 @@ function blog() {
                         <tr>
                           <td>{ind + 1}</td>
                           <td>{data.title}</td>
+                          <td>{data.catagory}</td>
                           <td>Admin</td>
                           <td>{data.date}</td>
                           {/* <td>{parse(data.description)}</td> */}
