@@ -10,8 +10,8 @@ import Blog from "./blog"
 const Addblog = () => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState();
-
     const [title, setTitle] = useState('');
+    const [catagory, setCatagory] = useState('');
     const [image, setImage] = useState('');
     const [redirect, setRedirect] = useState(false);
 
@@ -30,6 +30,7 @@ const Addblog = () => {
     fd.append("title", title)
     fd.append("description", description)
     fd.append("image", image)
+    fd.append("catagory", catagory)
 
     const addBlog = async () => {
         try {
@@ -53,7 +54,10 @@ const Addblog = () => {
                                 <Form.Label>Blog Title</Form.Label>
                                 <Form.Control onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
                             </Form.Group>
-
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Blog Catagory</Form.Label>
+                                <Form.Control onChange={e => setCatagory(e.target.value)} type="" placeholder="Enter blog catagory" />
+                            </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Blog Image</Form.Label>
                                 <Form.Control onChange={e => setImage(e.target.files[0])} type="file" placeholder="" />

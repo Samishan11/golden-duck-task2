@@ -10,9 +10,9 @@ import Blog from "./blog"
 
 const Editblog = ({ data }) => {
     const { quill, quillRef } = useQuill();
-    const [description, setDescription] = useState(data.description);
-
     const [title, setTitle] = useState(data.title);
+    const [catagory, setCatagory] = useState(data.catagory);
+    const [description, setDescription] = useState(data.description);
     const [image, setImage] = useState('');
 
     const [redirect, setRedirect] = useState(false);
@@ -29,6 +29,7 @@ const Editblog = ({ data }) => {
     // add blog
     var fd = new FormData();
     fd.append("title", title)
+    fd.append("catagory", catagory)
     fd.append("id", data._id)
     fd.append("description", description)
     fd.append("image", image)
@@ -54,6 +55,10 @@ const Editblog = ({ data }) => {
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Blog Title</Form.Label>
                                 <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Blog Title</Form.Label>
+                                <Form.Control value={catagory} onChange={e => setCatagory(e.target.value)} type="" placeholder="Enter blog catagory" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Blog Image</Form.Label>
