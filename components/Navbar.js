@@ -81,7 +81,7 @@ function Navbar() {
           </div>
           <div className={Style.startProject}>
             <li className={Style.startProjectButton}>
-              <Link href="#" onClick={navToggle} smooth={true}>
+              <Link href="contact" onClick={navToggle} smooth={true}>
                 Start Project
               </Link>
             </li>
