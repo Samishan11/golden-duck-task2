@@ -6,12 +6,16 @@ import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import axios from "axios";
 import FormData from "form-data";
+import Blog from "./blog"
+
 const Editblog = ({ data }) => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState(data.description);
 
     const [title, setTitle] = useState(data.title);
     const [image, setImage] = useState('');
+
+    const [redirect, setRedirect] = useState(false);
 
     React.useEffect(() => {
         if (quill) {
@@ -32,6 +36,7 @@ const Editblog = ({ data }) => {
     const EditBlog = async () => {
         try {
             const res = await axios.put(`http://golden-duck-it.herokuapp.com/api/v4/blogUpdate`, fd)
+            setRedirect(true)
             console.log(res.data)
         } catch (error) {
             console.log(error)
@@ -41,23 +46,28 @@ const Editblog = ({ data }) => {
 
 
     return (
-        <div style={{ padding: "1rem" }}>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Blog Title</Form.Label>
-                    <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Blog Image</Form.Label>
-                    <Form.Control onChange={e => setImage(e.target.files[0])} type="file" placeholder="" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Blog Description</Form.Label>
-                    <pre> <div id="textarea" style={{ height: "10rem" }} ref={quillRef} /> </pre>
-                </Form.Group>
-            </Form>
-            <Button onClick={EditBlog} variant="outline-primary">Edit Blog</Button>
-        </div>
+        <>
+            {
+                redirect ? <Blog /> :
+                    <div style={{ padding: "1rem" }}>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Blog Title</Form.Label>
+                                <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Blog Image</Form.Label>
+                                <Form.Control onChange={e => setImage(e.target.files[0])} type="file" placeholder="" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Blog Description</Form.Label>
+                                <pre> <div id="textarea" style={{ height: "10rem" }} ref={quillRef} /> </pre>
+                            </Form.Group>
+                        </Form>
+                        <Button onClick={EditBlog} variant="outline-primary">Edit Blog</Button>
+                    </div>
+            }
+        </>
     )
 }
 export default Editblog;

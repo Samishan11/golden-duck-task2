@@ -70,7 +70,7 @@ function feedback() {
     fd.append("description", description)
     fd.append("author", author)
     fd.append("image", image)
-
+    handleClose()
     try {
       const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/postFeedback", fd)
       console.log(res)
@@ -92,6 +92,7 @@ function feedback() {
     editFormData.append('description', singleFeedbackDescription);
     editFormData.append('author', singleFeedbackAuthor);
     editFormData.append('image', singleFeedbackImage);
+    handleEditClose()
     try {
       const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/editFeedback`, editFormData)
       if (change) {

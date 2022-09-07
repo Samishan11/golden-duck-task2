@@ -42,12 +42,14 @@ function Portfolio() {
     // add portfolio
     const addPortfolio = async () => {
         try {
+            handleClose()
             const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/portfolio/post", fd)
             console.log(res)
             console.log("res")
             setBrandname('')
             setCatagory('')
             setImage('')
+            
             if (change) {
                 setChange(false)
             } else {
@@ -60,12 +62,14 @@ function Portfolio() {
 
     // edit portfolio
     const editPortfolio = async () => {
+        handleClose1()
         try {
             const res = await axios.put(`http://golden-duck-it.herokuapp.com/api/v4/portfolioUpdate`, fdedit)
             console.log(res.data.data)
             setBrandname('')
             setCatagory('')
             setImage('')
+            
             if (change) {
                 setChange(false)
             } else {
