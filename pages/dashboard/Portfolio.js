@@ -42,7 +42,7 @@ function Portfolio() {
     // add portfolio
     const addPortfolio = async () => {
         try {
-            const res = await axios.post("http://localhost:8000/api/v4/portfolio/post", fd)
+            const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/portfolio/post", fd)
             console.log(res)
             console.log("res")
             setBrandname('')
@@ -127,7 +127,7 @@ function Portfolio() {
                 keyboard={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal title</Modal.Title>
+                    <Modal.Title>Add Portfolio</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
@@ -160,8 +160,8 @@ function Portfolio() {
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Blog Title</th>
-                                        <th>Description</th>
+                                        <th>Portfolio Title</th>
+                                        <th>Catagory</th>
                                         <th>Aurthor</th>
                                         <th>Date</th>
                                         <th>Action</th>

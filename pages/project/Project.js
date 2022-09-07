@@ -1,24 +1,28 @@
-import React from 'react'
+import React, {useEffect , useState} from 'react'
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Sideicon from "../../components/Sideicons";
 import Style from "../../public/static/projects.module.css"
+import { useRouter } from 'next/router'
+
 const Project = () => {
+    const router = useRouter();
+    const data = router.query;
     return (
         <>
             <Navbar></Navbar>
             <div className={Style.container}>
                 <div className={Style.bgimg}>
                     <div className={Style.content}>
-                        <p className={Style.title}>WEBSITE DEVELOPMENT</p>
-                        <p className={Style.text}>Golden Duck Store</p>
+                        <p className={Style.title}>{data.catagory}</p>
+                        <p className={Style.text}>{data.brand_name}</p>
                     </div>
                 </div>
             </div>
             <Sideicon></Sideicon>
             <div className={Style.imgscroll}>
                 <div className={Style.img}>
-                    <img src="/assets/images/asset 31.png" alt="" />
+                    <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt="" />
                 </div>
                 <a className={Style.link} href="#">Visit Live Site</a>
             </div>

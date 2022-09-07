@@ -1,24 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Navbar from '../components/Navbar'
 import Sideicons from '../components/Sideicons'
 import Style from "../public/static/portfoli.module.css"
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import Footer from "../components/Footer"
-import axios from 'axios';
+import { PortfolioContext } from '../context/Context';
+import Link from 'next/link';
+import Router from 'next/router';
 const Portfolio = () => {
-    // get all portfolio
-    const [portfolio, setPortfolio] = useState([]);
-    const getPortfolio = async () => {
-        try {
-            const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/portfolio")
-            setPortfolio(res.data.data)
-        } catch (error) {
-            console.log(error)
-        }
+    const [Portfolio] = useContext(PortfolioContext);
+
+    // send data
+    function sendQuery (data){
+        Router.push({
+            pathname:"/project/Project" , query:data
+        })
     }
-    useEffect(() => {
-        getPortfolio()
-    }, [])
+
+
+    // get all portfolio
+    // const [portfolio, setPortfolio] = useState([]);
+    // const getPortfolio = async () => {
+    //     try {
+    //         const res = await axios.get("https://golden-duck-it.herokuapp.com/api/v4/portfolio")
+    //         setPortfolio(res.data.data)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+    // useEffect(() => {
+    //     getPortfolio()
+    // }, [])
 
     // buttons
     const buttons = [
@@ -46,29 +58,21 @@ const Portfolio = () => {
 
     // filter data
 
-     function getPortfoliodata() {
-        const data = portfolio;
-        return data;
-      }
-
-    const [filterportfolio, setFiltredPortfolio] = useState(null);
+    const [filterportfolio, setFiltredPortfolio] = useState(Portfolio);
     useEffect(() => {
-        console.log(getPortfoliodata())
-        setFiltredPortfolio(getPortfoliodata());
+        setFiltredPortfolio(Portfolio);
+        console.log(Portfolio)
     }, []);
     function filter(val) {
-        let filterdata = portfolio.filter(type => type.catagory === val);
+        let filterdata = Portfolio.filter(type => type.catagory === val);
         return filterdata;
     }
     function handlePortfolio(value) {
-        console.log(filterportfolio.length)
         let catagory = value;
         catagory !== "All"
             ? setFiltredPortfolio(filter(catagory))
-            : setFiltredPortfolio(getPortfoliodata());
+            : setFiltredPortfolio(Portfolio);
     }
-
-
     return (
         <div className={Style.contianer}>
             <Navbar></Navbar>
@@ -96,10 +100,10 @@ const Portfolio = () => {
                         filterportfolio &&
                         filterportfolio.map(data => {
                             return (
-                                <a href="/project/Project">
+                                <div onClick={sendQuery.bind(this,data)}>
                                     <div className={Style.main}>
                                         <div className={Style.body}>
-                                            <img src={`http://localhost:8000/${data.image}`} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
+                                            <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
                                             <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
                                         </div>
                                         <div className="content">
@@ -107,7 +111,7 @@ const Portfolio = () => {
                                             <p className={Style.work}>{data.catagory}</p>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             )
                         })
                     }
