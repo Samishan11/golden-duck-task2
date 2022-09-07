@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form'
 import Cookies from 'js-cookie';
 import axios from "axios";
+import FormData from 'form-data';
 
 function Project() {
 

@@ -16,7 +16,7 @@ function dashboard(req) {
   const logout = () => {
     console.log("logging out");
     Cookies.set("Loggedin", false);
-    window.location.replace("http://localhost:3000");
+    window.location.replace("https://golden-duck-it.herokuapp.com/");
   };
 
   const [blog, setBlog] = useState(false);
