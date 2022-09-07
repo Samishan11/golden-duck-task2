@@ -9,22 +9,26 @@
 }
 
 .dashboard{
-    padding-left: 10%;
-    display: flex;
-    width: 80%;
-    background-color: white;
+    position: relative;
+    left: 10%;
+    background-color: rgb(255, 255, 255);
 
 }
 
 .dashboardContainer{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+   
 }
 
 .dashboardColumn{
-    margin-bottom: 45%;
+    padding-bottom: 22%;
     height: 25%;
     width: 22%;
     color: white;    
@@ -49,4 +53,9 @@
     font-size: 14px;
     text-align: center;
     margin-top: -24%;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
 }

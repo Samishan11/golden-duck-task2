@@ -41,8 +41,6 @@ function Project() {
     setSingleProjectCategory(projects[i].category)
     setSingleProjectImage(projects[i].image)
     setSingleProjectId(projects[i]._id)
-
-
   }
 
   //------------------------------
