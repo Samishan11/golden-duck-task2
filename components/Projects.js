@@ -31,10 +31,10 @@ function Projects() {
                     className="Image"
                     src={`https://golden-duck-it.herokuapp.com/${data.image}`}
                   />
-
+                  <p>{data.category}</p>
                 </div>
                 <p>{data.title}</p>
-                <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
+                <a href={`https://${data.link}`}>Visit Live Site</a>
               </div>
             )
 
