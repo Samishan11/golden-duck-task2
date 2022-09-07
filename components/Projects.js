@@ -29,7 +29,7 @@ function Projects() {
                 <div className={Style.projectImage}>
                   <img
                     className="Image"
-                    src={`http://localhost:8000/${data.image}`}
+                    src={`https://golden-duck-it.herokuapp.com/${data.image}`}
                   />
 
                 </div>

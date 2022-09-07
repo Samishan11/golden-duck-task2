@@ -90,6 +90,7 @@
     align-items: center;
     background: #fff;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .col {

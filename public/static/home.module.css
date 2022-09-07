@@ -104,5 +104,22 @@
         width: 50%;
         overflow: hidden;
         height: auto;
+        margin-top: 0;
+    }
+}
+@media only screen and (max-width:675px){
+    .firstLine, .secondLine{
+        font-size: 4rem;
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+@media only screen and (max-width:540px){
+    .firstLine, .secondLine{
+        font-size: 3rem;
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 700;
+        margin: 0;
     }
 }
