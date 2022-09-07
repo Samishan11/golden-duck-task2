@@ -5,13 +5,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import axios from "axios";
-const Editblog = ({data}) => {
+import FormData from "form-data";
+const Editblog = ({ data }) => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState(data.description);
 
     const [title, setTitle] = useState(data.title);
     const [image, setImage] = useState('');
-
 
     React.useEffect(() => {
         if (quill) {
@@ -47,17 +47,16 @@ const Editblog = ({data}) => {
                     <Form.Label>Blog Title</Form.Label>
                     <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="" placeholder="Enter blog title" />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Blog Image</Form.Label>
                     <Form.Control onChange={e => setImage(e.target.files[0])} type="file" placeholder="" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Blog Description</Form.Label>
-                   <pre> <div id="textarea" style={{ height: "10rem" }} ref={quillRef} /> </pre>
+                    <pre> <div id="textarea" style={{ height: "10rem" }} ref={quillRef} /> </pre>
                 </Form.Group>
             </Form>
-            <Button onClick={EditBlog} variant="outline-primary">Add Blog</Button>
+            <Button onClick={EditBlog} variant="outline-primary">Edit Blog</Button>
         </div>
     )
 }
