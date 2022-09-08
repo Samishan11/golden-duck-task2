@@ -60,7 +60,7 @@ function feedback() {
 
   const getFeedback = async () => {
     const response = await axios.get('https://golden-duck-it.herokuapp.com/api/v4/feedback');
-    console.log(response.data.feedbacks);
+    console.log(response.data);
     setFeedbacks(response.data.feedbacks)
   }
 

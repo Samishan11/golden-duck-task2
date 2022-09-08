@@ -23,8 +23,6 @@
 
 }
 
-
-
 .container a{
     text-decoration: none;
     color: white;
@@ -42,4 +40,13 @@
 
 .dashboard{
     width: 80%;
+}
+.hamburger{
+margin-left: 30px;
+}
+.icons{
+    display: none;
+}
+.iconsShow{
+    display: block;
 }
