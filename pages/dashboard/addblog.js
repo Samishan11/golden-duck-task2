@@ -7,6 +7,8 @@ import 'quill/dist/quill.snow.css';
 import axios from "axios";
 import FormData from "form-data";
 import Blog from "./blog"
+import { toast } from 'react-toastify';
+
 const Addblog = () => {
     const { quill, quillRef } = useQuill();
     const [description, setDescription] = useState();
@@ -35,9 +37,39 @@ const Addblog = () => {
     const addBlog = async () => {
         try {
             const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/blog/post", fd)
+            if (res.data.success) {
+                toast.success('Blog deleted sucessfully', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }else{
+                toast.error('Something went wrong', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
             setRedirect(true)
             console.log(res.data)
         } catch (error) {
+            toast.success('Something went wrong', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             console.log(error)
         }
     }

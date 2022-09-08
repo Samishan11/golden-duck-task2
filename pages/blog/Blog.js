@@ -8,6 +8,7 @@ const parse = require('html-react-parser');
 function Blog() {
     const router = useRouter();
     const data = router.query;
+    console.log(data)
     return (
         <>
             <Navbar></Navbar>

@@ -37,10 +37,10 @@ function Blog() {
                 <div className={Style.blog}>
                   <Link href={{
                     pathname: "/blog/Blog",
-                    query: data,
+                    query: data
                   }}>
                     <div className={Style.blogImage}>
-                      <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt='' />
+                      <img src={data.image.url} alt='' />
                     </div>
                   </Link>
 
@@ -48,13 +48,14 @@ function Blog() {
                     <h2>{data.title}</h2>
                     <h5>{data.catagory}</h5>
                     <p>
-                      {parse(data.description.slice(0, 300))}
+                      {parse(data.description.slice(0, 300)+"......")}
                     </p>
                   </div>
                 </div>
               )
             })
           }
+          
         </div>
       </div>
     </div>

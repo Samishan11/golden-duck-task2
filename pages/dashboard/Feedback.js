@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import {toast} from "react-toastify"
 
 function feedback() {
 
@@ -73,7 +74,27 @@ function feedback() {
     handleClose()
     try {
       const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/postFeedback", fd)
-      console.log(res)
+      if (res.data.success) {
+        toast.success('Feedback deleted sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (change) {
         setChange(false)
       } else {
@@ -95,6 +116,27 @@ function feedback() {
     handleEditClose()
     try {
       const res = await axios.put(`https://golden-duck-it.herokuapp.com/api/v4/editFeedback`, editFormData)
+      if (res.data.success) {
+        toast.success('Feedback edit sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (change) {
         setChange(false)
       } else {
@@ -111,7 +153,27 @@ function feedback() {
   const deleteFeedback = async (i) => {
     try {
       const res = await axios.delete(`https://golden-duck-it.herokuapp.com/api/v4/deleteFeedback/${feedbacks[i]._id}`)
-      console.log(res)
+      if (res.data.success) {
+        toast.success('Feedback deleted sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (change) {
         setChange(false)
       } else {
@@ -127,7 +189,7 @@ function feedback() {
   }, [change])
 
   return (
-    <div className='body'>
+    <div className='body' style={{ padding: "1rem", width: "100%" }}>
       <Button onClick={handleShow} variant="outline-success" className='link' smooth={true} style={{ textDecoration: "none" }} >Add Feedback</Button>
 
       <Modal
@@ -167,7 +229,7 @@ function feedback() {
           <Button onClick={addFeedback} variant="primary">Add Feedback</Button>
         </Modal.Footer>
       </Modal>
-      <div className="blogs">
+      <div className="blogs" style={{ marginTop: "1rem" }}>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -185,11 +247,11 @@ function feedback() {
                 <tr><td>{index + 1}</td>
 
                   <td>{feedback.title}</td>
-                  <td>{feedback.description}</td>
+                  <td>{feedback.description?.slice(0,10)+"......"}</td>
                   <td>{feedback.author}</td>
                   <td>2020 : 12: 01</td>
                   <td> <Button variant="outline-success" onClick={handleEditShow.bind(this, index)} >Edit</Button>
-                    <Button variant="outline-danger" onClick={deleteFeedback.bind(this, index)}>Delete</Button></td>
+                    <Button style={{marginLeft:"5px"}} variant="outline-danger" onClick={deleteFeedback.bind(this, index)}>Delete</Button></td>
                 </tr>
 
               )

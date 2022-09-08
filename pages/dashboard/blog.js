@@ -7,7 +7,8 @@ import { useState } from "react"
 import Addblog from './addblog';
 import axios from "axios";
 import Editblog from './editblog';
-const parse = require('html-react-parser');
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function blog() {
 
@@ -30,6 +31,7 @@ function blog() {
         setBlogs(res.data.data)
         console.log(res.data.data)
 
+
       } catch (error) {
         console.log(error)
       }
@@ -41,6 +43,27 @@ function blog() {
   const deleteBlog = async (id) => {
     try {
       const res = await axios.delete(`https://golden-duck-it.herokuapp.com/api/v4/blog/delete/${id}`)
+      if (res.data.success) {
+        toast.success('Blog deleted sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      }
       if (change) {
         setChange(false)
       } else {
@@ -57,7 +80,7 @@ function blog() {
     <>
       {
         showeditblog ? <Editblog data={singleblogs} /> :
-          <div className='body' style={{ padding: "1rem" }}>
+          <div className='body' style={{ padding: "1rem", width: "100%" }}>
             {!blog && <Button variant="outline-success" onClick={setBlog.bind(this, true)} className='link' smooth={true} style={{ textDecoration: "none" }} >Add Blog</Button>}
 
             {blog ? <Addblog /> : <div style={{ marginTop: "1rem" }} className="blogs">

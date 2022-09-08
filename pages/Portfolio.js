@@ -5,11 +5,10 @@ import Style from "../public/static/portfoli.module.css"
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import Footer from "../components/Footer"
 import { PortfolioContext } from '../context/Context';
-import Link from 'next/link';
 import Router from 'next/router';
 const Portfolio = () => {
     const [Portfolio] = useContext(PortfolioContext);
-
+console.log(Portfolio)
     // send data
     function sendQuery (data){
         Router.push({
@@ -103,7 +102,7 @@ const Portfolio = () => {
                                 <div onClick={sendQuery.bind(this,data)}>
                                     <div className={Style.main}>
                                         <div className={Style.body}>
-                                            <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
+                                            <img src={data.image.url} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
                                             <BsFillPlusCircleFill className={Style.plusicon}></BsFillPlusCircleFill>
                                         </div>
                                         <div className="content">

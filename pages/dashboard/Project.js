@@ -8,13 +8,13 @@ import Form from 'react-bootstrap/Form'
 import Cookies from 'js-cookie';
 import axios from "axios";
 import FormData from 'form-data';
+import {toast} from "react-toastify";
 
 function Project() {
 
-
   const [projects, setProjects] = useState([]);
   const [link, setLink] = useState();
-  const [category,setCategory] = useState();
+  const [category, setCategory] = useState();
 
   const [singleProject, setSingleProject] = useState({});
   const [singleProjectTitle, setSingleProjectTitle] = useState();
@@ -63,7 +63,6 @@ function Project() {
   const getProject = async () => {
     try {
       const response = await axios.get('https://golden-duck-it.herokuapp.com/api/v4/getProject');
-   
       setProjects(response.data.projects)
     } catch (err) {
       console.log(err.message)
@@ -97,6 +96,27 @@ function Project() {
       const response = await axios.post('https://golden-duck-it.herokuapp.com/api/v4/postProject',
         formData,
       );
+      if (response.data.success) {
+        toast.success('Project add sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (change) {
         setChange(false)
       } else {
@@ -113,6 +133,27 @@ function Project() {
       const response = await axios.put('https://golden-duck-it.herokuapp.com/api/v4/editProject',
         editFormData
       )
+      if (response.data.success) {
+        toast.success('Project edit sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (change) {
         setChange(false)
       } else {
@@ -130,6 +171,27 @@ function Project() {
     try {
       const response = await axios.delete(`https://golden-duck-it.herokuapp.com/api/v4/deleteProject/${projects[i]._id}`,
       )
+      if (response.data.success) {
+        toast.success('Project deleted sucessfully', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Something went wrong', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (change) {
         setChange(false)
       } else {
@@ -145,7 +207,7 @@ function Project() {
   }, [change])
 
   return (
-    <div className='body'>
+    <div className='body' style={{ padding: "1rem", width: "100%" }}>
       <Button onClick={handleShow} variant="outline-success" className='link' smooth={true} style={{ textDecoration: "none" }} >Add Project</Button>
 
       <Modal
@@ -184,7 +246,7 @@ function Project() {
           <Button onClick={addProject} variant="primary">Add Portfolio</Button>
         </Modal.Footer>
       </Modal>
-      <div className="blogs">
+      <div className="blogs" style={{ marginTop: "1rem" }}>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -192,9 +254,6 @@ function Project() {
               <th>Project Title</th>
               <th>Category</th>
               <th>Link</th>
-
-              <th>Image</th>
-
               <th>Date</th>
               <th>Action</th>
             </tr>
@@ -207,11 +266,9 @@ function Project() {
                   <td>{project.title}</td>
                   <td>{project.category}</td>
                   <td><a>{project.link}</a></td>
-
-                  <td>{project.image}</td>
                   <td>2020 : 12: 01</td>
                   <td> <Button variant="outline-success" onClick={handleEditShow.bind(this, index)} >Edit</Button>
-                    <Button variant="outline-danger" onClick={deleteProject.bind(this, index)}>Delete</Button></td>
+                    <Button style={{ marginLeft: "5px" }} variant="outline-danger" onClick={deleteProject.bind(this, index)}>Delete</Button></td>
                 </tr>
 
               )
