@@ -1,20 +1,20 @@
-.parent{
+.parent {
     display: flex;
 }
 
-.container{
+.container {
     margin: 0;
     padding: 0;
     height: 100vh;
     background-color: #0093E9;
-
     width: 17%;
     color: white;
     display: flex;
+    transition: .5s ease-in-out;
 
 }
 
-.container li{
+.container li {
     color: white;
     text-decoration: none;
     list-style: none;
@@ -23,7 +23,7 @@
 
 }
 
-.container a{
+.container a {
     text-decoration: none;
     color: white;
     font-weight: 500;
@@ -31,22 +31,49 @@
     cursor: pointer;
 }
 
-.container button{
+.container button {
     font-family: 'Montserrat';
     padding: 5%;
     font-weight: 600;
     cursor: pointer;
 }
 
-.dashboard{
+.dashboard {
     width: 80%;
 }
-.hamburger{
-margin-left: 30px;
+
+.hamburger {
+    margin-left: 25px;
+    margin-bottom: 10px;
 }
-.icons{
+
+.icons {
     display: none;
+    list-style: none;
 }
-.iconsShow{
+
+.iconsShow {
     display: block;
+    list-style: none;
+}
+
+.liFirst {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebarWidthdec {
+    width: 8%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #0093E9;
+    color: white;
+    display: flex;
+    transition: .5s ease-in-out;
+}
+
+.iheight {
+    margin-top: 50px;
 }
