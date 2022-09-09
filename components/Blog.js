@@ -37,7 +37,7 @@ function Blog() {
                 <div className={Style.blog}>
                   <Link href={{
                     pathname: "/blog/Blog",
-                    query: data
+                    query: {data: JSON.stringify(data)}
                   }}>
                     <div className={Style.blogImage}>
                       <img src={data.image.url} alt='' />

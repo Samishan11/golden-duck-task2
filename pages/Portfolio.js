@@ -8,15 +8,13 @@ import { PortfolioContext } from '../context/Context';
 import Router from 'next/router';
 const Portfolio = () => {
     const [Portfolio] = useContext(PortfolioContext);
-console.log(Portfolio)
+    console.log(Portfolio)
     // send data
-    function sendQuery (data){
+    function sendQuery(data) {
         Router.push({
-            pathname:"/project/Project" , query:data
+            pathname: "/project/Project", query: { data: JSON.stringify(data) }
         })
     }
-
-
     // get all portfolio
     // const [portfolio, setPortfolio] = useState([]);
     // const getPortfolio = async () => {
@@ -99,7 +97,7 @@ console.log(Portfolio)
                         filterportfolio &&
                         filterportfolio.map(data => {
                             return (
-                                <div onClick={sendQuery.bind(this,data)}>
+                                <div onClick={sendQuery.bind(this, data)}>
                                     <div className={Style.main}>
                                         <div className={Style.body}>
                                             <img src={data.image.url} alt="JAC Motors" sizes="(max-width:479px) 479px, 100vw " />
