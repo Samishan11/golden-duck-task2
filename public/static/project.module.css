@@ -85,3 +85,7 @@
     padding-right: 2em !important;
     background-color: RGBA(255,255,255,0);
 }
+.skelotonMain{
+    height: 300px;
+    width: 300px;
+}
