@@ -11,17 +11,25 @@ function Blog() {
     const router = useRouter();
     const data = router.query;
     var parser;
+    var blogparser;
+
     try {
-        if (parser === undefined) {
+        if (parser === undefined || blogparser === undefined) {
             parser = JSON.parse(data['data'])
-            console.log(parser.description)
+            blogparser = JSON.parse(data['blog'])
+            blogparser?.sort((a, b) => {
+                return new Date(b.date) - new Date(a.date);
+            })
         } else {
             parser = JSON.parse(data['data'])
-            console.log(parser.description)
+            blogparser = JSON.parse(data['blog'])
+            blogparser?.sort((a, b) => {
+                return new Date(b.date) - new Date(a.date);
+            })
         }
     } catch (error) {
         parser = JSON.parse(null)
-        console.log(parser)
+        blogparser = JSON.parse(null)
     }
 
     return (
@@ -64,18 +72,24 @@ function Blog() {
                         </div>
                         <div className={Style.col4}>
                             <h3>Latest Post</h3>
-                            <div className={Style.posts}>
-                                <div className={Style.img}>
-                                    <img src="https://bunzo-react.pages.dev/static/ecf9deeb4e56ff33ef29993511eb6aaf/1d064/02-special-banner.webp" alt="" />
-                                </div>
-                                <div className={Style.postcontent}>
-                                    <h5>Make your store stand out from the others by...</h5>
-                                    <div className={Style.date}>
-                                        <GoCalendar></GoCalendar>
-                                        <p style={{ marginLeft: "5px" }}>{moment(parser?.date).fromNow()}</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {
+                                blogparser?.slice(0,4)?.map?.(data => {
+                                    return (
+                                        <div className={Style.posts}>
+                                            <div className={Style.img}>
+                                                <img src={data?.image?.url} alt="" />
+                                            </div>
+                                            <div className={Style.postcontent}>
+                                                <h5>Make your store stand out from the others by...</h5>
+                                                <div className={Style.date}>
+                                                    <GoCalendar></GoCalendar>
+                                                    <p style={{ marginLeft: "5px" }}>{moment(data?.date).fromNow()}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
 
                         </div>
                     </div>
