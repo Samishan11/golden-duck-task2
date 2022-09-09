@@ -89,3 +89,8 @@
     height: 300px;
     width: 300px;
 }
+@media screen and (max-width:800px) {
+    .container{
+        padding-bottom: 10rem;
+    }
+}

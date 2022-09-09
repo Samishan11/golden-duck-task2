@@ -157,7 +157,7 @@ function dashboard() {
           </li>
           <li className={Style.liFirst}>
             <BiLogOut style={{marginTop:"50px"}} className={show ? Style.iconsShow : Style.icons} onClick={logout}></BiLogOut>
-            <button style={{background:"transparent", borderRadius:"10px", padding:"5px 15px" , border:"2px solid #fff", color:"#fff"}} className={show ? Style.icons : Style.iconsShow} onClick={logout}>Login</button>
+            <button style={{background:"transparent", borderRadius:"10px", padding:"5px 15px" , border:"2px solid #fff", color:"#fff"}} className={show ? Style.icons : Style.iconsShow} onClick={logout}>Logout</button>
           </li>
         </ul>
       </div>
