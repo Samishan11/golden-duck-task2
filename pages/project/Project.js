@@ -7,22 +7,35 @@ import { useRouter } from 'next/router'
 
 const Project = () => {
     const router = useRouter();
-    const data = router.query;
+    const data = router.query
+    var parser;
+    try {
+        if (parser === undefined) {
+            parser = JSON.parse(data['data'])
+            console.log(parser.description)
+        } else {
+            parser = JSON.parse(data['data'])
+            console.log(parser.description)
+        }
+    } catch (error) {
+        parser = JSON.parse(null)
+        console.log(parser)
+    };
     return (
         <>
             <Navbar></Navbar>
             <div className={Style.container}>
                 <div className={Style.bgimg}>
                     <div className={Style.content}>
-                        <p className={Style.title}>{data.catagory}</p>
-                        <p className={Style.text}>{data.brand_name}</p>
+                        <p className={Style.title}>{parser?.catagory}</p>
+                        <p className={Style.text}>{parser?.brand_name}</p>
                     </div>
                 </div>
             </div>
             <Sideicon></Sideicon>
             <div className={Style.imgscroll}>
                 <div className={Style.img}>
-                    <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt="" />
+                    <img src={parser?.image?.url} alt="" />
                 </div>
                 <a className={Style.link} href="#">Visit Live Site</a>
             </div>

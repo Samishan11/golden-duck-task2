@@ -135,3 +135,9 @@
     font-weight: 600;
     color: #333;
 }
+
+@media screen and (max-width:450px) {
+    .subContainer{
+        grid-template-columns: repeat(1 ,1fr);
+    }
+}

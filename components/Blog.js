@@ -3,6 +3,9 @@ import React from "react";
 import Style from "../public/static/blog.module.css";
 import Link from "next/link";
 const parse = require('html-react-parser');
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import Style1 from "../public/static/loding.module.css"
 
 function Blog() {
   const [blogs, setBlogs] = React.useState([]);
@@ -32,29 +35,51 @@ function Blog() {
         </h4>
         <div className={Style.blogContainer}>
           {
-            blogs.map((data) => {
-              return (
-                <div className={Style.blog}>
-                  <Link href={{
-                    pathname: "/blog/Blog",
-                    query: data,
-                  }}>
-                    <div className={Style.blogImage}>
-                      <img src={`https://golden-duck-it.herokuapp.com/${data.image}`} alt='' />
-                    </div>
-                  </Link>
+            blogs.length > 0 ?
+              blogs.map((data) => {
+                return (
+                  <div className={Style.blog}>
+                    <Link href={{
+                      pathname: "/blog/Blog",
+                      query: { data: JSON.stringify(data) , blog:JSON.stringify(blogs) }
+                    }}>
+                      <div className={Style.blogImage}>
+                        <img src={data.image.url} alt='' />
+                      </div>
+                    </Link>
 
-                  <div className={Style.blogDescription}>
-                    <h2>{data.title}</h2>
-                    <h5>{data.catagory}</h5>
-                    <p>
-                      {parse(data.description.slice(0, 300))}
-                    </p>
+                    <div className={Style.blogDescription}>
+                      <h2>{data.title}</h2>
+                      <h5>{data.catagory}</h5>
+                      <p>
+                        {parse(data.description.slice(0, 300) + "......")}
+                      </p>
+                    </div>
                   </div>
+                )
+              }) :
+              <div className={Style1.skeleton}>
+                <div className={Style1.skelotonMain}>
+                  <Skeleton style={{ height: "60%" }} className={Style1.animation}><img src="" alt="" /></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
                 </div>
-              )
-            })
+                <div className={Style1.skelotonMain}>
+                  <Skeleton style={{ height: "60%" }} className={Style1.animation}><img src="" alt="" /></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                </div>
+                <div className={Style1.skelotonMain}>
+                  <Skeleton style={{ height: "60%" }} className={Style1.animation}><img src="" alt="" /></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                  <Skeleton className={Style1.animation}><p></p></Skeleton>
+                </div>
+              </div>
           }
+
         </div>
       </div>
     </div>

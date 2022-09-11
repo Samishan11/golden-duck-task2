@@ -201,3 +201,15 @@
 .analytics ul{
     padding: 0;
 }
+
+@media screen and (max-width:600px) {
+    .container{
+        flex-direction: column;
+        margin-bottom: 40rem;
+    }
+}
+@media screen and (max-width:470px) {
+    .container{
+        margin-bottom: 50rem;
+    }
+}

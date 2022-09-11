@@ -34,6 +34,7 @@
     margin: auto;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap
 
 }
 
@@ -65,7 +66,6 @@ color: #0477bf;
     text-align: center;
     padding: 8%;
 }
-
 
 .solutionList h4{
     text-align: center;
@@ -120,4 +120,37 @@ color: #0477bf;
     border-radius: 100%;
     background-color: #2ab52acc;
 
+}
+
+@media screen and (max-width:950px) {
+    .container{
+        margin-top: 30rem;
+    }
+}
+
+@media screen and (max-width:710px) {
+    .container{
+        margin-top: 25rem;
+    }
+    .solution{
+       height: 65vh;
+    }
+}
+@media screen and (max-width:470px) {
+    .container{
+        margin-bottom: 5rem;
+    }
+    .solution{
+       height: 75vh;
+    }
+}
+@media screen and (max-width:600px) {
+    .container{
+        margin-top: 15rem;
+    }
+}
+@media screen and (max-width:450px) {
+    .container{
+        margin-top: 10rem;
+    }
 }

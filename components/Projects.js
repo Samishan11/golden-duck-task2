@@ -2,6 +2,9 @@ import React from "react";
 import Style from "../public/static/project.module.css";
 import { Link } from "react-scroll";
 import axios from "axios";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import Style1 from "../public/static/loding.module.css"
 
 function Projects() {
   const [projects, setProjects] = React.useState([]);
@@ -23,22 +26,44 @@ function Projects() {
       </div>
       <div className={Style.projectContainer}>
         {
-          projects.map(data => {
-            return (
-              <div className={Style.project}>
-                <div className={Style.projectImage}>
-                  <img
-                    className="Image"
-                    src={`https://golden-duck-it.herokuapp.com/${data.image}`}
-                  />
-                  <p>{data.category}</p>
-                </div>
-                <p>{data.title}</p>
-                <a href={`https://${data.link}`}>Visit Live Site</a>
-              </div>
-            )
+          projects.length > 0 ?
+            projects.map(data => {
+              return (
+                <div className={Style.project}>
+                  <div className={Style.projectImage}>
+                    <img
+                      className="Image"
+                      src={`https://golden-duck-it.herokuapp.com/${data.image}`}
+                    />
 
-          })
+                  </div>
+                  <p>{data.title}</p>
+                  <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
+                </div>
+              )
+
+
+            }) :
+            <div className={Style1.skeleton}>
+              <div className={Style1.skelotonMain}>
+                <Skeleton style={{ height: "60%" }} className={Style1.animation}><img src="" alt="" /></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+              </div>
+              <div className={Style1.skelotonMain}>
+                <Skeleton style={{ height: "60%" }} className={Style1.animation}><img src="" alt="" /></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+              </div>
+              <div className={Style1.skelotonMain}>
+                <Skeleton style={{ height: "60%" }} className={Style1.animation}><img src="" alt="" /></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+                <Skeleton className={Style1.animation}><p></p></Skeleton>
+              </div>
+            </div>
         }
       </div>
     </div>

@@ -6,7 +6,8 @@ import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import axios from "axios";
 import FormData from "form-data";
-import Blog from "./blog"
+import Blog from "./blog";
+import {toast} from "react-toastify";
 
 const Editblog = ({ data }) => {
     const { quill, quillRef } = useQuill();
@@ -37,6 +38,27 @@ const Editblog = ({ data }) => {
     const EditBlog = async () => {
         try {
             const res = await axios.put(`http://golden-duck-it.herokuapp.com/api/v4/blogUpdate`, fd)
+            if (res.data.success) {
+                toast.success('Blog deleted sucessfully', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }else{
+                toast.error('Something went wrong', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
             setRedirect(true)
             console.log(res.data)
         } catch (error) {

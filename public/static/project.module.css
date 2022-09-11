@@ -84,6 +84,17 @@
     font-weight: 600 !important;
     padding-right: 2em !important;
     background-color: RGBA(255,255,255,0);
+
+}
+.skelotonMain{
+    height: 300px;
+    width: 300px;
+}
+@media screen and (max-width:800px) {
+    .container{
+        padding-bottom: 10rem;
+    }
+
     cursor: pointer;
     text-decoration: none;
 }

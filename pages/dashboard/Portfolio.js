@@ -7,6 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import FormData from "form-data";
+import {toast} from "react-toastify";
 
 function Portfolio() {
 
@@ -44,12 +45,31 @@ function Portfolio() {
         try {
             handleClose()
             const res = await axios.post("https://golden-duck-it.herokuapp.com/api/v4/portfolio/post", fd)
-            console.log(res)
-            console.log("res")
+            if (res.data.success) {
+                toast.success('Portfolio add sucessfully', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            } else {
+                toast.error('Something went wrong', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
             setBrandname('')
             setCatagory('')
             setImage('')
-            
+
             if (change) {
                 setChange(false)
             } else {
@@ -65,11 +85,31 @@ function Portfolio() {
         handleClose1()
         try {
             const res = await axios.put(`http://golden-duck-it.herokuapp.com/api/v4/portfolioUpdate`, fdedit)
-            console.log(res.data.data)
+            if (res.data.success) {
+                toast.success('Portfolio edit sucessfully', {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              } else {
+                toast.error('Something went wrong', {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              }
             setBrandname('')
             setCatagory('')
             setImage('')
-            
+
             if (change) {
                 setChange(false)
             } else {
@@ -109,7 +149,27 @@ function Portfolio() {
     const deletePortfolio = async (id) => {
         try {
             const res = await axios.delete(`https://golden-duck-it.herokuapp.com/api/v4/portfolio/delete/${id}`)
-            console.log(res)
+            if (res.data.success) {
+                toast.success('Portfolio delete sucessfully', {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              } else {
+                toast.error('Something went wrong', {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              }
             if (change) {
                 setChange(false)
             } else {
@@ -122,7 +182,7 @@ function Portfolio() {
 
 
     return (
-        <div className='body' style={{ padding: "1rem" }}>
+        <div className='body' style={{ padding: "1rem", width: "100%" }}>
             <Button onClick={handleShow} variant="outline-success" className='link' smooth={true} style={{ textDecoration: "none" }} >Add Portfolio</Button>
             <Modal
                 show={show}
