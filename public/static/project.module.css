@@ -84,6 +84,7 @@
     font-weight: 600 !important;
     padding-right: 2em !important;
     background-color: RGBA(255,255,255,0);
+
 }
 .skelotonMain{
     height: 300px;
@@ -93,4 +94,23 @@
     .container{
         padding-bottom: 10rem;
     }
+
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.projectImage{
+    position: relative;
+}
+
+.projectImage p{
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    font-size: 10px;
+    border-radius: 5px 5px 5px 5px;
+    padding: 1%;
+    background-color: #0C71C3;
+    color: white;
+    font-weight: 500;
 }

@@ -42,6 +42,7 @@ function Projects() {
                 </div>
               )
 
+
             }) :
             <div className={Style1.skeleton}>
               <div className={Style1.skelotonMain}>
