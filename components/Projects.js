@@ -33,12 +33,12 @@ function Projects() {
                   <div className={Style.projectImage}>
                     <img
                       className="Image"
-                      src={`https://golden-duck-it.herokuapp.com/${data.image}`}
+                      src={`${data.image.url}`}
                     />
 
                   </div>
                   <p>{data.title}</p>
-                  <Link to="https://jacnepal.com.np/">Visit Live Site</Link>
+                  <a href={`${data.link}`}>Visit Live Site</a>
                 </div>
               )
 
